@@ -47,7 +47,7 @@ nav {
   position: fixed;
   left: 0px;
   right: 0px;
-  z-index: 1000;
+  z-index: 2000;
   transition: height 0.4s ease-in-out,background-color 0.4s ease-in-out;;
 }
   
@@ -55,6 +55,7 @@ nav {
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px); /* Adds a glassy effect */
   height: 75px;
+  position: fi;
   
 }
 
