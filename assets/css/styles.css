@@ -1,7 +1,17 @@
 header {
   height: 98.9vh; /* Full height */
-  background: linear-gradient(to bottom, #577eea, #089c95);
+  background: linear-gradient(to bottom, #4972e6, #3f13df);
   
+}
+
+.header_bg_round_image {
+  position: absolute; 
+  top: 0; 
+  left: 50%; 
+  transform: translateX(-50%); /* Centers it horizontally */
+  width: auto; /* Maintain original width */
+  height: auto; /* Maintain original height */
+  z-index: 1; /* Ensure it appears above other elements */
 }
 
 .header_bg_bottom_image {
@@ -17,8 +27,8 @@ header {
   position: absolute; /* Position it absolutely */
   top: 2; /* Align it to the top */
   left: 2; /* Align it to the left */
-  width: 100px; 
-  height: 150px; 
+  width: auto; /* Maintain original width */
+  height: auto; /* Maintain original height */ 
   z-index: 1; /* Ensure it appears above other background elements */
 }
 
@@ -27,8 +37,8 @@ header {
   top: 40%; /* Align it vertically to the center */
   right: 0; /* Align it to the right edge of the screen */
   transform: translateY(-85%); /* Offset the image by 50% of its height to center it */
-  width: 150px; 
-  height: 250px; 
+  width: auto; /* Maintain original width */
+  height: auto; /* Maintain original height */
   z-index: 1; /* Ensure it appears above other elements */
 }
 
@@ -150,8 +160,9 @@ nav a:hover {
   font-size: 40px; /* Smaller than headerName */
   position: absolute;
   left: 20px; 
-  top: calc(53% + 60px); /* Position it slightly below headerName */
+  top: calc(53% + 60px); 
   transform: translateY(-50%);
   color: #fff;
-  margin-top: 10px; /* Reduce spacing */
+  margin-top: 10px;
+  opacity: 0.5;
 }
