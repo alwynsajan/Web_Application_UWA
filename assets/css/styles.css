@@ -1,7 +1,7 @@
+/* General Header Style */
 header {
-  height: 98.9vh; /* Full height */
+  height: 100vh; /* Full height */
   background: linear-gradient(to bottom, #4972e6, #3f13df);
-  
 }
 
 .header_bg_round_image {
@@ -19,14 +19,14 @@ header {
   position: absolute; /* Position it absolutely at the bottom */
   bottom: 0;
   left: 0;
-  z-index: 1; /* Make sure it stays behind other content */
-  object-fit: cover; /* Make sure the image scales properly */
+  z-index: 1; 
+  object-fit: cover; 
 }
 
 .header_bg_circle {
   position: absolute; /* Position it absolutely */
-  top: 2; /* Align it to the top */
-  left: 2; /* Align it to the left */
+  top: 2%; /* Align it to the top */
+  left: 2%; /* Align it to the left */
   width: auto; /* Maintain original width */
   height: auto; /* Maintain original height */ 
   z-index: 1; /* Ensure it appears above other background elements */
@@ -42,12 +42,12 @@ header {
   z-index: 1; /* Ensure it appears above other elements */
 }
 
-
+/* Navigation Bar */
 nav {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  font-size: 15px;
-  height: 100px;
+  font-size: 18px; /* Fixed font size */
+  height: 80px; /* Fixed height */
   letter-spacing: 1px;
   display: flex;
   justify-content: flex-end; /* Aligns text to the right */
@@ -55,28 +55,26 @@ nav {
   background-color: transparent;
   border-bottom: 1px solid rgba(42,42,42,0.2);
   position: fixed;
-  left: 0px;
-  right: 0px;
+  left: 0;
+  right: 0;
   z-index: 2000;
-  transition: height 0.4s ease-in-out,background-color 0.4s ease-in-out;;
+  transition: height 0.4s ease-in-out, background-color 0.4s ease-in-out;
 }
-  
+
 .nav-scrolled {
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px); /* Adds a glassy effect */
-  height: 75px;
-  position: fi;
-  
+  height: 60px; /* Fixed height */
 }
 
 nav a {
   color: white;
   text-decoration: none; /* Removes underline */
-  font-size: 18px; 
+  font-size: 18px; /* Fixed font size */
   margin: 0 15px; /* Spacing between links */
   transition: color 0.4s ease-in-out; /* Smooth color change */
 }
-  
+
 nav a:hover {
   color: black; 
 }
@@ -91,9 +89,21 @@ nav a:hover {
 
 .hamburger_menu {
   display: none; /* Hide hamburger menu by default */
-  font-size: 30px;
+  font-size: 30px; /* Fixed font size */
   cursor: pointer;
   color: #f5f1f1;
+}
+
+@media (max-width: 600px) {
+  .headerName {
+    margin-top: 100px;
+    font-size: 80px !important; 
+    position: absolute; 
+    left: 20px; 
+    top: 35%; /* Keep it at the same vertical position */
+    transform: translateY(-50%); 
+    transition: font-size 0.4s ease-in-out; 
+}
 }
 
 @media (max-width: 768px) {
@@ -102,20 +112,19 @@ nav a:hover {
     flex-direction: column; /* Stack nav items vertically */
   }
 
-  /* Show the hamburger menu */
   .hamburger_menu {
     display: block; /* Make hamburger menu visible */
-    font-size: 40px;
+    font-size: 40px; /* Fixed font size */
     cursor: pointer;
     color: #faf8f8;
     z-index: 1; /* Ensure it appears above other content */
-    border: 2px solid rgba(255, 255, 255, 0.4); /* White border */
-    padding: 4px; /* Add padding to ensure the border doesn’t overlap the icon */
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    padding: 5px; /* Add padding */
     border-radius: 8px; 
     position: absolute; 
-    top: 20px; /* Adjust the distance from the top if necessary */
-    right: 20px; /* Position it 20px from the right edge of the screen */
-}
+    top: 20px; 
+    right: 20px; 
+  }
 
   /* Styles for the nav when active */
   .nav.active {
@@ -129,18 +138,29 @@ nav a:hover {
     height: auto;
   }
 
-  /* Show navigation links when menu is active */
   .nav.active a {
     display: block; 
     margin: 10px 0;
     text-align: center;
-    font-size: 18px;
+    font-size: 18px; /* Fixed font size */
     color: black;
   }
 
   .nav.active a:hover {
     color: #2563EB;  
+  }
 }
+
+.alwyn_image {
+  position: absolute; 
+  left: 150px; 
+  top: 20%; 
+  transform: translateY(-50%); 
+  width: 180px; 
+  height: 200px; 
+  border-radius: 30%; 
+  border: 5px solid white; 
+  object-fit: cover;
 }
 
 .headerName {
@@ -152,6 +172,7 @@ nav a:hover {
   top: 35%; /* Position vertically at the center */
   transform: translateY(-50%); /* Center the element vertically */
   color: #fff;
+  white-space: nowrap;
 }
 
 .headerSub {
