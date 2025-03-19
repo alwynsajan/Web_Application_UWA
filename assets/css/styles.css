@@ -1,7 +1,13 @@
+:root {
+  --light-blue: rgb(172, 213, 222);
+  --dark-blue: rgb(26, 78, 141);
+}
+
+
 header {
   height: 100vh; 
   /* background: linear-gradient(to bottom, #252627, #010c08); */
-  background-color: rgb(172, 213, 222);
+  background-color: var(--light-blue);
 }
 
 
@@ -72,20 +78,22 @@ nav {
 }
 
 .nav-scrolled {
-  background-color: rgb(172, 213, 222);
+  background-color: var(--light-blue);
   background: transparent;
   backdrop-filter: blur(10px); /* Adds a glassy effect */
   height: 60px; 
 }
 
 nav a.selected {
-  border-bottom: 2px solid rgb(26, 78, 141);
-  color:  rgb(26, 78, 141);
+  border-bottom: 2px solid var(--dark-blue);
+  color:  var(--dark-blue);
   opacity: 1;
 }
 
 nav a {
-  color: rgb(26, 78, 141);
+  color: var(--dark-blue);
+  font-family: 'Work Sans', monospace;
+  font-weight: bold;
   text-decoration: none; /* Removes underline */
   font-size: 18px; 
   margin: 0 15px; 
@@ -94,7 +102,7 @@ nav a {
 }
 
 nav a:hover {
-  color:  rgb(26, 78, 141);
+  color:  var(--dark-blue);
   opacity: 1;
 }
 
@@ -137,7 +145,7 @@ nav a:hover {
     top: 100px;
     left: 0;
     right: 0;
-    background-color: rgba(55, 52, 52, 0.9);
+    background-color: var(--dark-blue);
     height: auto;
   }
 
@@ -150,7 +158,7 @@ nav a:hover {
   }
 
   .nav.active a:hover {
-    color: rgb(26, 78, 141); 
+    color: var(--light-blue); 
   }
   .alwyn_image {
     display:  none
@@ -164,7 +172,7 @@ nav a:hover {
     width: 60px; /* Slightly increase the size to make it visible */
     height: 60px; 
     border-radius: 50%; 
-    border: 5px solid rgb(26, 78, 141); 
+    border: 5px solid var(--dark-blue); 
     object-fit: cover;
     transition: font-size 0.4s ease-in-out; 
     z-index: 2; /* Ensure it's on top */
@@ -176,10 +184,10 @@ nav a:hover {
   right: 200px; 
   top: 15%; 
   transform: translateY(-50%); 
-  width: 320px; 
-  height: 360px; 
+  width: 400px; 
+  height: 440px; 
   border-radius: 30%; 
-  border: 9px solid rgb(26, 78, 141);
+  border: 9px solid var(--dark-blue);
   object-fit: cover;
   transition: font-size 0.4s ease-in-out; 
 }
@@ -205,7 +213,7 @@ nav a:hover {
   left: 20px; 
   top: 30%; /* Position vertically at the center */
   transform: translateY(-50%); /* Center the element vertically */
-  color: rgb(26, 78, 141);
+  color: var(--dark-blue);
   white-space: nowrap;
   margin-left: 10%;
 }
@@ -216,9 +224,9 @@ nav a:hover {
   font-size: 25px; 
   position: absolute;
   left: 20px; 
-  top: 50%; 
+  top: 45%; 
   transform: translateY(-50%);
-  color: rgb(26, 78, 141);;
+  color: var(--dark-blue);
   margin-left: 10%;
   margin-top: 10px;
   opacity: 0.5;
@@ -245,7 +253,7 @@ nav a:hover {
       font-size: 20px !important; 
       position: absolute; 
       left: 20px; 
-      top: 53%;
+      top: 48%;
       transform: translateY(-50%); 
       transition: font-size 0.4s ease-in-out; 
 }
@@ -269,11 +277,11 @@ nav a:hover {
   width: 50px;
   height: 50px;
   margin: 20px;
-  top:57%;
+  top:50%;
   background-color: transparent; 
   border-radius: 50%;
-  border: 3px solid rgb(26, 78, 141);
-  color:rgb(26, 78, 141);
+  border: 3px solid var(--dark-blue);
+  color:var(--dark-blue);
   text-align: center;
   line-height: 50px; 
   font-size: 24px;
@@ -289,7 +297,7 @@ nav a:hover {
 }
 
 .socialButton:hover {
-  background-color: rgba(55, 52, 52, 0.9); 
+  background-color: var(--light-blue); 
 }
 
 .socialButton i {
@@ -297,13 +305,25 @@ nav a:hover {
   line-height: 50px;
 }
 
-
+p{
+  font-size: 20px;
+  color: #606c71;
+}
 .profile {
-  text-align: left; 
-  margin-left:100px;
-  color: rgb(172, 213, 222);
+  color: var(--dark-blue);
   font-family: 'Work Sans', monospace;
-  font-weight: 5000;
+  font-weight: bold;
   font-size: 55px;
-  /* opacity: .5; */
+  opacity: .7;
+}
+
+.profileBox {
+  font-family: 'Work Sans', sans-serif;
+  background-color: white; /* Background for the box */
+  padding: 20px; /* Space inside the box */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px var(--dark-blue); /* Shadow effect */
+  width: 100%; /* Take full width within the container */
+  margin: 20px 0; /* Keep vertical spacing */
+  text-align: left; /* Align text to the left */
 }
