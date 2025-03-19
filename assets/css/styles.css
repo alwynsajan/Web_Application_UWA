@@ -1,13 +1,15 @@
 header {
   height: 100vh; 
-  background: linear-gradient(to bottom, #252627, #0c0a01);
+  /* background: linear-gradient(to bottom, #252627, #010c08); */
+  background-color: rgb(172, 213, 222);
 }
+
 
 .header_bg_round_image {
   position: absolute; 
   top: 0; 
-  left: 50%; 
-  transform: translateX(-50%); /* Centers it horizontally */
+  right: 0; 
+  /* transform: translateX(-50%); Centers it horizontally */
   width: auto; 
   height: auto; 
   z-index: 1; /* Ensure it appears above other elements */
@@ -22,29 +24,38 @@ header {
   object-fit: cover; 
 }
 
+.header_bg_bottom_image_blue{
+  width: 100%; 
+  position: absolute; /* Position it absolutely at the bottom */
+  bottom: 1%;
+  left: 0;
+  z-index: 1; 
+  object-fit: cover; 
+}
+
 .header_bg_circle {
-  position: absolute; /* Position it absolutely */
+  position: absolute; 
   top: 2%; 
   left: .5%; 
-  width: auto; /* Maintain original width */
-  height: auto; /* Maintain original height */ 
-  z-index: 1; /* Ensure it appears above other background elements */
+  width: auto; 
+  height: auto; 
+  z-index: 1; 
 }
 
 .header_bg_triangle {
-  position: absolute; /* Position the image absolutely */
-  top: 40%; /* Align it vertically to the center */
-  right: .5% ; /* Align it to the right edge of the screen */
+  position: absolute; 
+  top: 40%; 
+  right: .5% ; 
   transform: translateY(-85%); 
-  width: auto; /* Maintain original width */
-  height: auto; /* Maintain original height */
+  width: auto; 
+  height: auto; 
   z-index: 1; 
 }
 
 /* Navigation Bar */
 nav {
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 500;
+  font-family: 'Work Sans', monospace;
+  font-weight: bold;
   font-size: 18px; 
   height: 80px; 
   letter-spacing: 1px;
@@ -61,26 +72,30 @@ nav {
 }
 
 .nav-scrolled {
-  background-color: rgba(55, 52, 52, 0.9);
+  background-color: rgb(172, 213, 222);
+  background: transparent;
   backdrop-filter: blur(10px); /* Adds a glassy effect */
   height: 60px; 
 }
 
 nav a.selected {
-  border-bottom: 2px solid #4EFF9C;
-  color: #4EFF9C;
+  border-bottom: 2px solid rgb(26, 78, 141);
+  color:  rgb(26, 78, 141);
+  opacity: 1;
 }
 
 nav a {
-  color: white;
+  color: rgb(26, 78, 141);
   text-decoration: none; /* Removes underline */
   font-size: 18px; 
   margin: 0 15px; 
-  transition: color 0.4s ease-in-out; /* Smooth color change */
+  transition: color 0.2s ease-in-out; /* Smooth color change */
+  opacity: .6;
 }
 
 nav a:hover {
-  color:  #4EFF9C; 
+  color:  rgb(26, 78, 141);
+  opacity: 1;
 }
 
 .hamburger_menu {
@@ -135,7 +150,7 @@ nav a:hover {
   }
 
   .nav.active a:hover {
-    color: #4EFF9C; 
+    color: rgb(26, 78, 141); 
   }
   .alwyn_image {
     display:  none
@@ -149,7 +164,7 @@ nav a:hover {
     width: 60px; /* Slightly increase the size to make it visible */
     height: 60px; 
     border-radius: 50%; 
-    border: 5px solid #4EFF9C; 
+    border: 5px solid rgb(26, 78, 141); 
     object-fit: cover;
     transition: font-size 0.4s ease-in-out; 
     z-index: 2; /* Ensure it's on top */
@@ -158,20 +173,20 @@ nav a:hover {
 
 .alwyn_image {
   position: absolute; 
-  right: 260px; 
-  top: 20%; 
+  right: 200px; 
+  top: 15%; 
   transform: translateY(-50%); 
-  width: 220px; 
-  height: 240px; 
+  width: 320px; 
+  height: 360px; 
   border-radius: 30%; 
-  border: 5px solid #4EFF9C; 
+  border: 9px solid rgb(26, 78, 141);
   object-fit: cover;
   transition: font-size 0.4s ease-in-out; 
 }
 
 .headerhello{
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 500;
+  font-family: 'Work Sans', monospace;
+  font-weight: bold;
   font-size: 75px;
   position: absolute;
   left: 20px; 
@@ -182,27 +197,28 @@ nav a:hover {
   margin-left: 10%;
 }
 .headerName {
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 500;
+  font-family: 'Work Sans', monospace;
+  letter-spacing: 0em;
+  font-weight: bold;
   font-size: 75px;
   position: absolute;
   left: 20px; 
   top: 30%; /* Position vertically at the center */
   transform: translateY(-50%); /* Center the element vertically */
-  color: #4EFF9C;
+  color: rgb(26, 78, 141);
   white-space: nowrap;
   margin-left: 10%;
 }
 
 .headerSub {
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 500;
+  font-family: 'Work Sans', monospace;
+  font-weight: 900;
   font-size: 25px; 
   position: absolute;
   left: 20px; 
   top: 50%; 
   transform: translateY(-50%);
-  color: #fff;
+  color: rgb(26, 78, 141);;
   margin-left: 10%;
   margin-top: 10px;
   opacity: 0.5;
@@ -256,8 +272,8 @@ nav a:hover {
   top:57%;
   background-color: transparent; 
   border-radius: 50%;
-  border: 3px solid #4EFF9C;
-  color:#4EFF9C;
+  border: 3px solid rgb(26, 78, 141);
+  color:rgb(26, 78, 141);
   text-align: center;
   line-height: 50px; 
   font-size: 24px;
@@ -281,3 +297,13 @@ nav a:hover {
   line-height: 50px;
 }
 
+
+.profile {
+  text-align: left; 
+  margin-left:100px;
+  color: rgb(172, 213, 222);
+  font-family: 'Work Sans', monospace;
+  font-weight: 5000;
+  font-size: 55px;
+  /* opacity: .5; */
+}
