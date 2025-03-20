@@ -1,13 +1,17 @@
 :root {
-  --light-blue: rgb(172, 213, 222);
-  --dark-blue: rgb(26, 78, 141);
+  --color1: #E1D7B7;
+  --color2: #1E2A5E;
+  --color3:#55679C;
+  --main-font: 'poppins', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 header {
   height: 100vh; 
-  /* background: linear-gradient(to bottom, #252627, #010c08); */
-  background-color: var(--light-blue);
+  background: linear-gradient(to bottom,var( --color1), #bfb698);
 }
 
 
@@ -15,10 +19,9 @@ header {
   position: absolute; 
   top: 0; 
   right: 0; 
-  /* transform: translateX(-50%); Centers it horizontally */
   width: auto; 
   height: auto; 
-  z-index: 1; /* Ensure it appears above other elements */
+  z-index: 1; 
 }
 
 .header_bg_bottom_image {
@@ -60,7 +63,7 @@ header {
 
 /* Navigation Bar */
 nav {
-  font-family: 'Work Sans', monospace;
+  font-family: var(--main-font);
   font-weight: bold;
   font-size: 18px; 
   height: 80px; 
@@ -68,7 +71,6 @@ nav {
   display: flex;
   justify-content: flex-end; /* Aligns text to the right */
   align-items: center; /* Centers text vertically */
-  background-color: transparent;
   border-bottom: 1px solid rgba(42,42,42,0.2);
   position: fixed;
   left: 0;
@@ -78,31 +80,29 @@ nav {
 }
 
 .nav-scrolled {
-  background-color: var(--light-blue);
-  background: transparent;
+  background-color: var(--color1);
   backdrop-filter: blur(10px); /* Adds a glassy effect */
   height: 60px; 
 }
 
 nav a.selected {
-  border-bottom: 2px solid var(--dark-blue);
-  color:  var(--dark-blue);
+  border-bottom: 2px solid var(--color2);
+  color:  var(--color3);
   opacity: 1;
 }
 
 nav a {
-  color: var(--dark-blue);
-  font-family: 'Work Sans', monospace;
+  color: var(--color3);
+  font-family: var(--main-font);
   font-weight: bold;
   text-decoration: none; /* Removes underline */
   font-size: 18px; 
   margin: 0 15px; 
   transition: color 0.2s ease-in-out; /* Smooth color change */
-  opacity: .6;
 }
 
 nav a:hover {
-  color:  var(--dark-blue);
+  color:  var(--color2);
   opacity: 1;
 }
 
@@ -145,7 +145,7 @@ nav a:hover {
     top: 100px;
     left: 0;
     right: 0;
-    background-color: var(--dark-blue);
+    background-color: var(--color2);
     height: auto;
   }
 
@@ -153,26 +153,26 @@ nav a:hover {
     display: block; 
     margin: 10px 0;
     text-align: center;
-    font-size: 18px; /* Fixed font size */
+    font-size: 18px; 
     color: white;
   }
 
   .nav.active a:hover {
-    color: var(--light-blue); 
+    color: var(--color1); 
   }
   .alwyn_image {
     display:  none
   }
 
   .alwynImageNav {
-    display: block; /* Show the small image on mobile */
+    display: block; 
     position: absolute; 
     left: 20px; 
     top: 3%; 
-    width: 60px; /* Slightly increase the size to make it visible */
+    width: 60px; 
     height: 60px; 
     border-radius: 50%; 
-    border: 5px solid var(--dark-blue); 
+    border: 5px solid var(--color2); 
     object-fit: cover;
     transition: font-size 0.4s ease-in-out; 
     z-index: 2; /* Ensure it's on top */
@@ -181,52 +181,52 @@ nav a:hover {
 
 .alwyn_image {
   position: absolute; 
-  right: 200px; 
+  right: 150px; 
   top: 15%; 
   transform: translateY(-50%); 
-  width: 400px; 
-  height: 440px; 
+  width: 500px; 
+  height: 500px; 
   border-radius: 30%; 
-  border: 9px solid var(--dark-blue);
+  border: 9px solid var(--color2);
   object-fit: cover;
   transition: font-size 0.4s ease-in-out; 
 }
 
 .headerhello{
-  font-family: 'Work Sans', monospace;
-  font-weight: bold;
-  font-size: 75px;
-  position: absolute;
-  left: 20px; 
-  top: 20%; /* Position vertically at the center */
-  transform: translateY(-50%); /* Center the element vertically */
-  color: #fff;
-  white-space: nowrap;
-  margin-left: 10%;
-}
-.headerName {
-  font-family: 'Work Sans', monospace;
-  letter-spacing: 0em;
+  font-family: var(--main-font);
   font-weight: bold;
   font-size: 75px;
   position: absolute;
   left: 20px; 
   top: 30%; /* Position vertically at the center */
   transform: translateY(-50%); /* Center the element vertically */
-  color: var(--dark-blue);
+  color: white;
+  white-space: nowrap;
+  margin-left: 10%;
+}
+.headerName {
+  font-family: var(--main-font);
+  letter-spacing: 0em;
+  font-weight: bold;
+  font-size: 75px;
+  position: absolute;
+  left: 20px; 
+  top: 40%; /* Position vertically at the center */
+  transform: translateY(-50%); /* Center the element vertically */
+  color: var(--color2);
   white-space: nowrap;
   margin-left: 10%;
 }
 
 .headerSub {
-  font-family: 'Work Sans', monospace;
+  font-family: var(--main-font);
   font-weight: 900;
   font-size: 25px; 
   position: absolute;
   left: 20px; 
-  top: 45%; 
+  top: 55%; 
   transform: translateY(-50%);
-  color: var(--dark-blue);
+  color: var(--color2);
   margin-left: 10%;
   margin-top: 10px;
   opacity: 0.5;
@@ -277,11 +277,11 @@ nav a:hover {
   width: 50px;
   height: 50px;
   margin: 20px;
-  top:50%;
+  top:60%;
   background-color: transparent; 
   border-radius: 50%;
-  border: 3px solid var(--dark-blue);
-  color:var(--dark-blue);
+  border: 3px solid var(--color2);
+  color:var(--color2);
   text-align: center;
   line-height: 50px; 
   font-size: 24px;
@@ -297,7 +297,7 @@ nav a:hover {
 }
 
 .socialButton:hover {
-  background-color: var(--light-blue); 
+  background-color: var(--color1); 
 }
 
 .socialButton i {
@@ -307,23 +307,91 @@ nav a:hover {
 
 p{
   font-size: 20px;
-  color: #606c71;
+  color: var(--color3);
 }
 .profile {
-  color: var(--dark-blue);
-  font-family: 'Work Sans', monospace;
+  color: var(--color2);
+  font-family: var(--main-font);
   font-weight: bold;
   font-size: 55px;
-  opacity: .7;
 }
 
-.profileBox {
-  font-family: 'Work Sans', sans-serif;
-  background-color: white; /* Background for the box */
+.Box {
+  font-family: var(--main-font);
+  background:transparent; 
+  padding: 20px; 
+  text-align: justify;
+  width: 100%;
+  margin: 20px 0; 
+  text-align: left; 
+}
+
+.skillSection{
+  background-color: var(--color2);
+}
+
+/* .skillBox{
+  font-family: var(--main-font);
   padding: 20px; /* Space inside the box */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px var(--dark-blue); /* Shadow effect */
-  width: 100%; /* Take full width within the container */
-  margin: 20px 0; /* Keep vertical spacing */
-  text-align: left; /* Align text to the left */
+  /* text-align: center;
+  width: 100%; 
+  margin: 20px 0; 
+  text-align: left; 
+}  */
+.skills {
+  color: var(--color1);
+  font-family: var(--main-font);
+  font-weight: bold;
+  font-size: 55px;
+}
+
+.skillItem {
+  flex: 1;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 35px;
+  background: var(--color2);
+  text-align: justify;
+  border: 4px solid var(--color2);
+  border-bottom: 4px solid var(--color1);
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px var(--color3);
+  transition: transform 0.3s ease-in-out;
+  color: var(--color1);  
+  margin-bottom: 70px;
+  height: 250px;
+}
+
+.skillItem:hover {
+  transform: scale(1.15);
+}
+
+.experienceSection{
+  background-color: var(--color1);
+}
+.experience {
+  color: var(--color3);
+  font-family: var(--main-font);
+  font-weight: bold;
+  font-size: 55px;
+}
+
+.experienceItem {
+  font-weight: 500;
+  font-size: 20px;
+  padding: 25px;
+  background: var(--color1);
+  text-align: left;
+  border: 4px solid var(--color1);
+  border-bottom: 4px solid var(--color3);
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px var(--color3);
+  transition: transform 0.3s ease-in-out;
+  color: var(--color3);
+  width: 100%;
+  margin-bottom: 70px;
+}
+
+.experienceItem:hover {
+  transform: scale(1.15);
 }
