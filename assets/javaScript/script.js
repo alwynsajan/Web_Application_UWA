@@ -7,40 +7,69 @@ window.addEventListener("scroll", function () {
     }
 });
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const navLinks = document.querySelectorAll("nav a");
-//   const sections = document.querySelectorAll("section");
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger_menu");
+  const nav = document.querySelector("nav");
+  const navLinks = document.querySelectorAll("nav a");
 
-//   // Set "Profile" as selected by default
-//   navLinks[0].classList.add("selected");
+  // Toggle menu when hamburger is clicked
+  hamburger.addEventListener("click", () => {
+      nav.classList.toggle("active");
+  });
 
-//   // Add click event to set the active link
-//   navLinks.forEach(link => {
-//       link.addEventListener("click", (event) => {
-//           navLinks.forEach(l => l.classList.remove("selected"));
-//           event.target.classList.add("selected");
-//       });
-//   });
+  // Close menu when a nav link is clicked (for better UX)
+  navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+          if (window.innerWidth <= 1180) {
+              nav.classList.remove("active");
+          }
+      });
+  });
 
-//   // Function to update nav selection on scroll
-//   function updateActiveSection() {
-//       let scrollPosition = window.scrollY + 100; // Offset for better section detection
+  // Function to close the menu if screen size increases
+  function handleResize() {
+      if (window.innerWidth > 1180) {
+          nav.classList.remove("active");
+      }
+  }
 
-//       sections.forEach((section) => {
-//           const sectionTop = section.offsetTop;
-//           const sectionHeight = section.offsetHeight;
-//           const sectionId = section.getAttribute("id");
+  window.addEventListener("resize", handleResize);
+});
 
-//           if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-//               navLinks.forEach(link => link.classList.remove("selected"));
-//               document.querySelector(`nav a[href="#${sectionId}"]`).classList.add("selected");
-//           }
-//       });
-//   }
 
-//   // Listen for scroll events
-//   window.addEventListener("scroll", updateActiveSection);
-// });
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector("header");
+  const navLinks = document.querySelectorAll("nav a");
+
+  // Show the header on page load
+  header.style.opacity = "1";
+  header.style.transform = "translateY(0)";
+  header.style.transition = "opacity 0.6s ease-in-out, transform 0.6s ease-in-out";
+
+  // Function to highlight nav item based on scroll position
+  function highlightNavItem() {
+      let scrollPosition = window.scrollY;
+      
+      navLinks.forEach(link => {
+          let section = document.querySelector(link.getAttribute("href"));
+          if (section) {
+              let sectionTop = section.offsetTop - 80; // Offset for fixed navbar
+              let sectionHeight = section.offsetHeight;
+
+              if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                  navLinks.forEach(nav => nav.classList.remove("selected"));
+                  link.classList.add("selected");
+              }
+          }
+      });
+  }
+
+  // Run function on scroll
+  window.addEventListener("scroll", highlightNavItem);
+  
+  // Initially highlight the correct nav item on load
+  highlightNavItem();
+});
 
   
   
