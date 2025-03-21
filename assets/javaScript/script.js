@@ -71,5 +71,56 @@ document.addEventListener("DOMContentLoaded", () => {
   highlightNavItem();
 });
 
+document.getElementById("nextButton").addEventListener("click", function() {
+  // Start the sliding animation (move to the left)
+  document.getElementById("projectWrapper").style.transform = "translateX(-100%)";
+
+  setTimeout(function() {
+    // Hide the first set of projects and show the second set after the transition
+    document.getElementById("projectSet1").style.display = "none";
+    document.getElementById("projectSet2").style.display = "block";
+
+    // Reset position to the start after the sliding animation
+    document.getElementById("projectWrapper").style.transition = "none"; // Disable transition for reset
+    document.getElementById("projectWrapper").style.transform = "translateX(0)"; // Reset position
+
+    setTimeout(function() {
+      // Re-enable transition after resetting position
+      document.getElementById("projectWrapper").style.transition = "transform 0.9s ease"; // Re-enable transition
+    }, 50); // Small delay to allow the reset to take effect
+
+    // Hide the nextButton and show the prevButton
+    document.getElementById("nextButton").style.display = "none";
+    document.getElementById("prevButton").style.display = "inline-block";
+  }, 500); // The timeout duration matches the transition time
+});
+
+document.getElementById("prevButton").addEventListener("click", function() {
+  // Start the sliding animation (move to the right)
+  document.getElementById("projectWrapper").style.transform = "translateX(100%)";
+
+  setTimeout(function() {
+    // Hide the second set of projects and show the first set after the transition
+    document.getElementById("projectSet2").style.display = "none";
+    document.getElementById("projectSet1").style.display = "block";
+
+    // Reset position to the start after the sliding animation
+    document.getElementById("projectWrapper").style.transition = "none"; // Disable transition for reset
+    document.getElementById("projectWrapper").style.transform = "translateX(0)"; // Reset position
+
+    setTimeout(function() {
+      // Re-enable transition after resetting position
+      document.getElementById("projectWrapper").style.transition = "transform 0.9s ease"; // Re-enable transition
+    }, 50); // Small delay to allow the reset to take effect
+
+    // Hide the prevButton and show the nextButton
+    document.getElementById("prevButton").style.display = "none";
+    document.getElementById("nextButton").style.display = "inline-block";
+  }, 500); // The timeout duration matches the transition time
+});
+
+
+
+
   
   

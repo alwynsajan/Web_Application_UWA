@@ -54,7 +54,7 @@
     <section class="container">
       <div id = "profile"class="row Box">
         <h2 class="profile">Profile.</h2>
-        <p>
+        <p class="profileParagraph">
           Driven by a passion for technology and innovation, with a strong focus on problem-solving, automation, and data-driven
            solutions. Excels in Python, C++, SQL, and full-stack development, aiming to contribute to impactful projects through 
            technical expertise and analytical thinking. Seeking opportunities in a dynamic environment that encourages continuous 
@@ -145,65 +145,77 @@
     <!-- Project Section -->
     <section id="projects" class="projectSection">
       <div class="container">
-        <div class="row Box">
+        <div class="row Box headerRow">
           <h2 class="projects">Projects.</h2>
+          <button id="nextButton" class="navButton">→</button>
+          <button id="prevButton" class="navButton" style="display: none;">←</button>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="projectItem">
-              <h3>MULTIPLE CAMERA TRACKING.</h3>
-              <h3>AllGoVision Technologies Pvt Ltd, India</h3>
-              <p>Multiple Camera Tracking project involves the development of a system
-                capable of tracking a vehicle or person across different cameras. This is
-                achieved through various algorithms, including spatiotemporal scoring
-                and feature matching.</p>
+        
+        <div id="projectWrapper">
+          <!-- First Two Projects -->
+          <div id="projectSet1">
+            <div class="row">
+              <div class="col-12">
+                <div class="projectItem">
+                    CUSTOMER MANAGEMENT SYSTEM (CRM) SYSTEM. 
+                    <a href="https://github.com/alwynsajan/CartridgeWorld-CRM" class = "crmLink"target="_blank"> <i>LINK</i> 
+                    </a>
+                  </h3>
+                  <h3>Freelance, Australia</h3>
+                  <p>Developed a CRM system using Python (Tkinter) and SQL, integrating
+                    product management, sales tracking, invoicing, and daily profit analysis.
+                    Designed an intuitive GUI for seamless user experience and
+                    implemented database-driven analytics to optimize sales performance.</p>
+                </div>
+              </div>
+            </div>
+    
+            <div class="row">
+              <div class="col-12">
+                <div class="projectItem">
+                  <h3>MULTIPLE CAMERA TRACKING.</h3>
+                  <h3>AllGoVision Technologies Pvt Ltd, India</h3>
+                  <p>Multiple Camera Tracking project involves the development of a system
+                    capable of tracking a vehicle or person across different cameras. This is
+                    achieved through various algorithms, including spatiotemporal scoring
+                    and feature matching.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Second Two Projects (Initially Hidden) -->
+          <div id="projectSet2" style="display: none;">
+            <div class="row">
+              <div class="col-12">
+                <div class="projectItem">
+                  <h3>ANALYTICS.</h3>
+                  <h3>AllGoVision Technologies Pvt Ltd, India</h3>
+                  <p>Analytics is a project focused on processing camera feeds using various
+                    Deep Learning (DL) algorithms according to predefined business logic to
+                    generate desired outputs. This involves extracting meaningful insights and
+                    information from the video streams to enhance security, efficiency, or
+                    decision-making processes.</p>
+                </div>
+              </div>
+            </div>
+    
+            <div class="row">
+              <div class="col-12">
+                <div class="projectItem">
+                  <h3>RECEPTIONIST MONITORING APPLICATION.</h3>
+                  <h3>AllGoVision Technologies Pvt Ltd, India</h3>
+                  <p>The Receptionist Monitoring Application uses facial recognition to identify
+                    receptionists at hospital desks. It stores data, alerts if receptionists are
+                    absent, prevents position swapping, and tracks attendance automatically,
+                    providing comprehensive administrative monitoring.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-12">
-            <div class="projectItem">
-              <h3> ANALYTICS.</h3>
-              <h3>AllGoVision Technologies Pvt Ltd, India</h3>
-              <p>Analytics is a project focused on processing camera feeds using various
-                Deep Learning (DL) algorithms according to predefined business logic to
-                generate desired outputs. This involves extracting meaningful insights and
-                information from the video streams to enhance security, efficiency, or
-                decision-making processes.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-12">
-            <div class="projectItem">
-              <h3> RECEPTIONIST MONITORING APPLICATION.</h3>
-              <h3>AllGoVision Technologies Pvt Ltd, India</h3>
-              <p>The Receptionist Monitoring Application uses facial recognition to identify
-                receptionists at hospital desks. It stores data, alerts if receptionists are
-                absent, prevents position swapping, and tracks attendance automatically,
-                providing comprehensive administrative monitoring.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-12">
-            <div class="projectItem">
-              <h3> CUSTOMER MANAGEMENT SYSTEM (CRM) SYSTEM.</h3>
-              <h3>Freelance, Australia</h3>
-              <p>Developed a CRM system using Python (Tkinter) and SQL, integrating
-                product management, sales tracking, invoicing, and daily profit analysis.
-                Designed an intuitive GUI for seamless user experience and
-                implemented database-driven analytics to optimize sales performance..</p>
-            </div>
-          </div>
-        </div>
-
       </div>
-
-    </section>
+    </section>    
     
 </body>
 </html>
