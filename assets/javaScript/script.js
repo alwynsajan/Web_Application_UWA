@@ -7,30 +7,40 @@ window.addEventListener("scroll", function () {
     }
 });
 
-function toggleNav() {
-    const nav = document.getElementById('navID');
-    nav.classList.toggle('active'); /* Toggle the 'active' class to show or hide the nav */
-  }
+// document.addEventListener("DOMContentLoaded", () => {
+//   const navLinks = document.querySelectorAll("nav a");
+//   const sections = document.querySelectorAll("section");
 
+//   // Set "Profile" as selected by default
+//   navLinks[0].classList.add("selected");
 
-function setActiveLink(event) {
-    // Remove 'selected' class from all links
-    const links = document.querySelectorAll('nav .btn');
-    links.forEach(link => link.classList.remove('selected'));
-  
-    // Add 'selected' class to the clicked link
-    event.target.classList.add('selected');
-  }
-  
-  // Ensure "Home" is selected by default when the page loads
-  document.addEventListener('DOMContentLoaded', () => {
-    const homeLink = document.querySelector('nav .btn'); // "Home" link is the first one
-    homeLink.classList.add('selected');
-  });
-  
-  // Attach event listeners to each link
-  document.querySelectorAll('nav .btn').forEach(link => {
-    link.addEventListener('click', setActiveLink);
-  });
+//   // Add click event to set the active link
+//   navLinks.forEach(link => {
+//       link.addEventListener("click", (event) => {
+//           navLinks.forEach(l => l.classList.remove("selected"));
+//           event.target.classList.add("selected");
+//       });
+//   });
+
+//   // Function to update nav selection on scroll
+//   function updateActiveSection() {
+//       let scrollPosition = window.scrollY + 100; // Offset for better section detection
+
+//       sections.forEach((section) => {
+//           const sectionTop = section.offsetTop;
+//           const sectionHeight = section.offsetHeight;
+//           const sectionId = section.getAttribute("id");
+
+//           if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+//               navLinks.forEach(link => link.classList.remove("selected"));
+//               document.querySelector(`nav a[href="#${sectionId}"]`).classList.add("selected");
+//           }
+//       });
+//   }
+
+//   // Listen for scroll events
+//   window.addEventListener("scroll", updateActiveSection);
+// });
+
   
   
