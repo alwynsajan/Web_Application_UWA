@@ -206,6 +206,7 @@ nav a:hover {
   white-space: nowrap;
   margin-left: 10%;
 }
+
 .headerName {
   font-family: var(--main-font);
   letter-spacing: 0em;
@@ -311,6 +312,7 @@ nav a:hover {
   font-size: 25px;
   color: var(--color3);
 } */
+
 .profile {
   color: var(--color2);
   font-family: var(--main-font);
@@ -318,6 +320,7 @@ nav a:hover {
   font-size: 55px;
   padding-top: 40px;
 }
+
 .profileParagraph{
   font-size: 25px;
   color: var(--color3);
@@ -363,7 +366,8 @@ nav a:hover {
   background: var(--color2);
   text-align: justify;
   /* border: 4px solid var(--color2); */
-  border: 4px solid var(--color4);
+  /* border: 4px solid var(--color4); */
+  box-shadow: 2px 2px 5px black;
   border-radius: 20px;
   transition: transform 0.3s ease-in-out;
   color: var(--color4);  
@@ -382,6 +386,7 @@ nav a:hover {
 /* .experienceSection{
   background-color: var(--color1);
 } */
+ 
 .experience {
   color: var(--color2);
   font-family: var(--main-font);
@@ -391,13 +396,9 @@ nav a:hover {
 
 .experienceItem {
   font-family: var(--main-font);
-  font-weight: 500;
   font-size: 23px;
   padding: 25px;
-  /* background: var(--color1); */
   text-align: left;
-  border: 4px solid var(--color3);
-  border-radius: 8px;
   transition: transform 0.3s ease-in-out;
   color: var(--color3);
   width: 100%;
@@ -408,15 +409,13 @@ nav a:hover {
   font-size: 25px; 
   font-weight: bold; 
   color: var(--color2);
+  margin-top: 0px; 
 }
 
-.experienceItem:hover {
-  transform: scale(1.05);
-  box-shadow: 2px 2px 5px var(--color3);
-}
 .projectSection{
   background-color: var(--color2);
 }
+
 .projects {
   color: var(--color1);
   font-family: var(--main-font);
@@ -426,17 +425,18 @@ nav a:hover {
 
 .projectItem {
   font-family: var(--main-font);
-  font-weight: 500;
   font-size: 23px;
   padding: 25px;
   text-align: left;
-  border: 4px solid var(--color1);
+  /* border: 4px solid var(--color1); */
+  box-shadow: 2px 2px 5px black;
   border-radius: 8px;
   transition: transform 0.3s ease-in-out;
   color: var(--color1);
   width: 100%;
   margin-bottom: 70px;
 }
+
 .projectItem h3 {
   font-size: 25px; 
   font-weight: bold; 
@@ -447,6 +447,7 @@ nav a:hover {
   transform: scale(1.05);
   box-shadow: 2px 2px 5px var(--color1);
 }
+
 .crmLink{
   color: var(--color3);
   text-decoration: none;
@@ -456,12 +457,12 @@ nav a:hover {
   color: var(--color1);
 }
 
-/* Ensure headerRow uses full width and positions elements on opposite sides */
+
 .headerRow {
   display: flex;
-  justify-content: flex-start; /* Positions elements at opposite ends */
-  align-items: center; /* Vertically aligns the items in the row */
-  width: 100%; /* Full width of the container */
+  justify-content: flex-start;
+  align-items: center; 
+  width: 100%; 
 }
 
 /* Styling for the buttons */
@@ -478,21 +479,15 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  /* transition: background-color 1s ease; */
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 2px 2px 10px black;
   margin-left: auto;
 }
 
 /* Hover effect */
 #nextButton:hover, #prevButton:hover {
-  background-color:var(--color3);
-  /* opacity: .6; */
-  transform: scale(1.15);
-}
-
-/* Initially hide the prevButton */
-#prevButton {
-  display: none;
+  /* background-color:var(--color3); */
+  transform: scale(1.25);
 }
 
 #projectWrapper {
