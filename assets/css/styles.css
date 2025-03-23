@@ -81,7 +81,7 @@ nav {
 }
 
 .nav-scrolled {
-  background-color: var(--color1);
+  background-color: white;
   backdrop-filter: blur(10px); /* Adds a glassy effect */
   height: 60px; 
 }
@@ -308,17 +308,13 @@ nav a:hover {
   line-height: 50px;
 }
 
-/* p{
-  font-size: 25px;
-  color: var(--color3);
-} */
-
 .profile {
   color: var(--color2);
   font-family: var(--main-font);
   font-weight: bold;
   font-size: 55px;
   padding-top: 40px;
+  margin-bottom: 40px;
 }
 
 .profileParagraph{
@@ -342,14 +338,7 @@ nav a:hover {
   background-color: var(--color2);
 }
 
-/* .skillBox{
-  font-family: var(--main-font);
-  padding: 20px; /* Space inside the box */
-  /* text-align: center;
-  width: 100%; 
-  margin: 20px 0; 
-  text-align: left; 
-}  */
+
 .skills {
   color: var(--color4);
   font-family: var(--main-font);
@@ -369,29 +358,46 @@ nav a:hover {
   /* border: 4px solid var(--color4); */
   box-shadow: 2px 2px 5px black;
   border-radius: 20px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.4s ease-in-out;
   color: var(--color4);  
   margin-bottom: 70px;
   height: 280px;
 }
 
 .skillItem:hover {
-  transform: scale(1.15);
   box-shadow: 2px 2px 5px var(--color3);
 }
 .skillItem h2{
   color: var(--color4);
 }
 
-/* .experienceSection{
-  background-color: var(--color1);
-} */
- 
+.skillItem {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.skillItem.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .experience {
   color: var(--color2);
   font-family: var(--main-font);
   font-weight: bold;
   font-size: 55px;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity .4s ease-out, transform .4s ease-out;
+  will-change: opacity, transform;
+  pointer-events: none; 
+  margin-bottom: 0px;
+}
+.experience.slideLeftToRight {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto; 
 }
 
 .experienceItem {
@@ -399,7 +405,6 @@ nav a:hover {
   font-size: 23px;
   padding: 25px;
   text-align: left;
-  transition: transform 0.3s ease-in-out;
   color: var(--color3);
   width: 100%;
   margin-bottom: 70px;
@@ -421,6 +426,17 @@ nav a:hover {
   font-family: var(--main-font);
   font-weight: bold;
   font-size: 55px;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  will-change: opacity, transform;
+  pointer-events: none; 
+}
+
+.projects.fadeIn {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto; 
 }
 
 .projectItem {
@@ -484,13 +500,71 @@ nav a:hover {
   margin-left: auto;
 }
 
-/* Hover effect */
-#nextButton:hover, #prevButton:hover {
-  /* background-color:var(--color3); */
-  transform: scale(1.25);
+.navButton {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  will-change: opacity, transform;
+  pointer-events: none; /* Prevents interaction while hidden */
 }
+
+
+.navButton.slideLeftToRight {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto; /* Allows interaction after appearing */
+}
+
+
+.navButton:hover {
+  transform: translateX(0) scale(1.25) !important;
+  transition: transform 0.2s ease-out;
+
+}
+
 
 #projectWrapper {
   transition: transform 0.9s ease; /* Ensure smooth transition from the start */
 }
 
+.counter {
+  font-size: 50px;
+  font-weight: bold;
+  color: var(--color2);
+}
+
+.educationSection{
+  background-color: var(--color1);
+}
+.education {
+  color: var(--color2);
+  font-family: var(--main-font);
+  font-weight: bold;
+  font-size: 55px;
+}
+
+.eduList{
+  display: flex; justify-content: space-between; width: 100%;
+}
+
+.educationItem {
+  font-family: var(--main-font);
+  background-color: var(--color1);
+  font-size: 23px;
+  padding: 25px;
+  text-align: left;
+  transition: transform 0.3s ease-in-out;
+  color: var(--color3);
+  width: 100%;
+  margin-bottom: 70px;
+}
+
+.educationItem li{
+  margin-bottom: 40px;
+}
+.educationItem h3 {
+  font-size: 25px; 
+  font-weight: bold; 
+  color: var(--color2);
+  margin-top: 0px; 
+}

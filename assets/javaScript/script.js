@@ -71,6 +71,78 @@ document.addEventListener("DOMContentLoaded", () => {
   highlightNavItem();
 });
 
+
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const skillItems = document.querySelectorAll(".skillItem");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fadeIn");
+          observer.unobserve(entry.target); // Stop observing once it's visible
+        }
+      });
+    }, { threshold: 0.2 });
+
+    skillItems.forEach((item) => {
+      observer.observe(item);
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const skillItems = document.querySelectorAll(".navButton");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("slideLeftToRight");
+          observer.unobserve(entry.target); // Stop observing once it's visible
+        }
+      });
+    }, { threshold: 0.2 });
+
+    skillItems.forEach((item) => {
+      observer.observe(item);
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const skillItems = document.querySelectorAll(".projects");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fadeIn");
+          observer.unobserve(entry.target); // Stop observing once it's visible
+        }
+      });
+    }, { threshold: 0.2 });
+
+    skillItems.forEach((item) => {
+      observer.observe(item);
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const skillItems = document.querySelectorAll(".experience");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("slideLeftToRight");
+          observer.unobserve(entry.target); // Stop observing once it's visible
+        }
+      });
+    }, { threshold: 0.2 });
+
+    skillItems.forEach((item) => {
+      observer.observe(item);
+    });
+  });
+
+
+
 document.getElementById("nextButton").addEventListener("click", function() {
   // Start the sliding animation (move to the left)
   document.getElementById("projectWrapper").style.transform = "translateX(-100%)";
@@ -119,7 +191,24 @@ document.getElementById("prevButton").addEventListener("click", function() {
   }, 500); // The timeout duration matches the transition time
 });
 
+$(document).ready(function () {
+  let count = 0;
+  let target = 9.02; // Change this to your desired final value
+  let speed = 25; // Lower is faster
 
+  function updateCounter() {
+      let interval = setInterval(function () {
+          if (count < target) {
+              count++;
+              $("#counter").text(count);
+          } else {
+              clearInterval(interval);
+          }
+      }, speed);
+  }
+
+  updateCounter();
+});
 
 
   
