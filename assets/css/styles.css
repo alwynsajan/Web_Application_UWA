@@ -551,11 +551,6 @@ nav a:hover {
   transition: transform 0.9s ease; /* Ensure smooth transition from the start */
 }
 
-.counter {
-  font-size: 50px;
-  font-weight: bold;
-  color: var(--color2);
-}
 
 .educationSection{
   background-color: var(--color1);
@@ -593,6 +588,50 @@ nav a:hover {
   margin-top: 0px; 
 }
 
+.certificateSection{
+  background-color: var(--color3);
+}
+
+.certificates{
+  color: var(--color4);
+  font-family: var(--main-font);
+  font-weight: bold;
+  font-size: 55px;
+}
+
+.certificateItem{
+  font-family: var(--main-font);
+  background-color: var(--color3);
+  font-size: 23px;
+  padding: 25px;
+  text-align: left;
+  transition: transform 0.3s ease-in-out;
+  color: var(--color4);
+  width: 100%;
+  margin-bottom: 70px;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity .4s ease-out, transform .4s ease-out;
+  will-change: opacity, transform;
+  pointer-events: none; 
+  margin-bottom: 0px;
+}
+
+.certificateItem.slideLeftToRight {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto; 
+}
+
+.certificateItem h3 {
+  font-size: 25px; 
+  font-weight: bold; 
+  margin-top: 0px; 
+}
+
+.certificateItem li{
+  margin-bottom: 30px;
+} 
 .footer h4{
   font-size: 30px;
   margin-top: 25px;
