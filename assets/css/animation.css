@@ -1,0 +1,42 @@
+@keyframes slideInDown {
+    from {
+      transform: translateY(-100%);
+      visibility: visible;
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .slideInDown {
+    animation: slideInDown 1s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px); /*Slight upward movement */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fadeIn {
+    animation: fadeIn 1.1s ease-in-out forwards;
+  }
+  
+  @keyframes slideLeftToRight {
+    from {
+      transform: translateX(-100%);
+      visibility: visible;
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  .slideLeftToRight {
+    animation: slideLeftToRight .6s ease-in-out forwards;
+  }
