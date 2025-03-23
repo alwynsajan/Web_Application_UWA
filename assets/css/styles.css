@@ -119,7 +119,7 @@ nav a:hover {
   display: none;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
   nav {
     display: none; /* Hide the entire navigation bar */
     flex-direction: column; /* Stack nav items vertically */
@@ -262,7 +262,7 @@ nav a:hover {
 }
 .socialButton{
   font-size: 27px !important; 
-  border:none !important;
+  top: 53% !important;
 }
 
     .gitButton {
@@ -281,10 +281,10 @@ nav a:hover {
   height: 50px;
   margin: 20px;
   top:60%;
-  background-color: transparent; 
+  background-color: var(--color1); 
   border-radius: 50%;
-  border: 3px solid var(--color2);
-  color:var(--color2);
+  /* border: 3px solid var(--color2); */
+  color:var(--color3);
   text-align: center;
   line-height: 50px; 
   font-size: 24px;
@@ -300,7 +300,8 @@ nav a:hover {
 }
 
 .socialButton:hover {
-  background-color: var(--color1); 
+ color: var(--color3); 
+ background-color: white;
 }
 
 .socialButton i {
@@ -567,4 +568,16 @@ nav a:hover {
   font-weight: bold; 
   color: var(--color2);
   margin-top: 0px; 
+}
+
+.footer h4{
+  font-size: 25px;
+  margin-top: 25px;
+  font-weight: bold; 
+}
+.footer{
+  font-family: var(--main-font);
+  background-color: white;
+  color: var(--color3);
+  border-bottom: 50px;
 }
