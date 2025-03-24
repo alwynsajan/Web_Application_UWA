@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
   document.addEventListener("DOMContentLoaded", function () {
-    const skillItems = document.querySelectorAll(".skillItem");
+    const skillItems = document.querySelectorAll(".card");
 
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.addEventListener("DOMContentLoaded", function () {
-    const skillItems = document.querySelectorAll(".navButton");
+    const navButton = document.querySelectorAll(".navButton");
 
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
@@ -102,13 +102,13 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, { threshold: 0.2 });
 
-    skillItems.forEach((item) => {
+    navButton.forEach((item) => {
       observer.observe(item);
     });
   });
 
   document.addEventListener("DOMContentLoaded", function () {
-    const skillItems = document.querySelectorAll(".projects");
+    const projects = document.querySelectorAll(".projects");
 
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
@@ -119,13 +119,13 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, { threshold: 0.2 });
 
-    skillItems.forEach((item) => {
+    projects.forEach((item) => {
       observer.observe(item);
     });
   });
 
   document.addEventListener("DOMContentLoaded", function () {
-    const skillItems = document.querySelectorAll(".experience");
+    const experience = document.querySelectorAll(".experience");
 
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, { threshold: 0.2 });
 
-    skillItems.forEach((item) => {
+    experience.forEach((item) => {
       observer.observe(item);
     });
   });
