@@ -141,6 +141,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  document.addEventListener("DOMContentLoaded", function () {
+    const experience = document.querySelectorAll(".certificateItem");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("slideLeftToRight");
+          observer.unobserve(entry.target); // Stop observing once it's visible
+        }
+      });
+    }, { threshold: 0.2 });
+
+    experience.forEach((item) => {
+      observer.observe(item);
+    });
+  });
+
 
 
 document.getElementById("nextButton").addEventListener("click", function() {
