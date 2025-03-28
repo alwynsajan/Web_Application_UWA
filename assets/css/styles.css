@@ -975,6 +975,13 @@ nav a:hover::before {
     }
   }
 
+  @media (max-width: 576px) {
+    .certificateItem {
+      width: 90%; /* Reduce width to ensure it fits inside the container */
+      margin: 0 auto 30px; /* Center it and reduce bottom margin */
+    }
+  }
+
 .footer h4{
   font-size: 30px;
   margin-top: 25px;
