@@ -468,7 +468,7 @@ nav a:hover::before {
   }
 }
 
-.profile,.skills,.experience,.projects,.references,.education{
+.profile,.skills,.experience,.projects,.certificates,.education{
   font-family: var(--main-font);
   font-weight: bold;
   font-size: 55px;
@@ -503,7 +503,7 @@ nav a:hover::before {
 }
 
 .skills {
-  color: var(--color4);
+  color: var(--color1);
   text-align: left;
   margin-top: 0px;
 }
@@ -546,8 +546,8 @@ nav a:hover::before {
 
 .card-front {
   background: var(--color2);
-  border: 3px solid var(--color4);
-  color: var(--color4);
+  border: 5px solid var(--color1);
+  color: var(--color1);
   font-size: 25px;
   display: flex;
   align-items: center;
@@ -555,7 +555,8 @@ nav a:hover::before {
 }
 
 .card-back {
-  background: var(--color4);
+  background: var(--color1);
+  border: 5px solid var(--color3);
   color: var(--color2);
   transform: rotateY(180deg);
   display: flex;
@@ -815,34 +816,34 @@ nav a:hover::before {
 
 .educationItem ul {
   list-style-type: none;  /* Removes default bullet points */
-  padding-left: 0;        /* Removes padding from the left */
+  padding-left: 0;        
 }
 
 .educationItem li {
   position: relative;
-  padding-left: 30px;  /* Space for the dot */
-  margin-bottom: 40px; /* Adjust space between list items */
+  padding-left: 30px; 
+  margin-bottom: 40px; 
 }
 
 .educationItem li::before {
   content: '';               /* Creates an empty pseudo-element */
   position: absolute;
-  left: 0;                   /* Positions it at the left */
-  top: 10px;                 /* Adjust the vertical position */
-  width: 10px;               /* Size of the dot */
-  height: 10px;              /* Size of the dot */
-  background-color: var(--color2);    /* Dot color */
-  border-radius: 50%;        /* Makes it circular */
+  left: 0;                  
+  top: 10px;                
+  width: 10px;               
+  height: 10px;              
+  background-color: var(--color2);  
+  border-radius: 50%;        
 }
 
 .educationItem li::after {
   content: '';                /* Creates an empty pseudo-element */
   position: absolute;
-  left: 4px;                  /* Adjust to align with the dot */
-  top: 20px;                  /* Position the vertical line below the dot */
-  width: 2px;                 /* Width of the vertical line */
-  height: 100%;               /* Make the vertical line span the entire height */
-  background-color: var(--color2);     /* Line color */
+  left: 4px;                  
+  top: 20px;                  
+  width: 2px;                 
+  height: 100%;               
+  background-color: var(--color2);     
 }
 
 .educationItem ul {
@@ -885,24 +886,21 @@ nav a:hover::before {
 }
 
 .certificateSection{
-  background-color: var(--color3);
+  background-color: var(--color2);
 }
 
 .certificates{
-  color: var(--color4);
-  font-family: var(--main-font);
-  font-weight: bold;
-  font-size: 55px;
+  color: var(--color1);
 }
 
-.certificateItem{
+.certificateItem {
   font-family: var(--main-font);
-  background-color: var(--color3);
+  background-color: var(--color2);
   font-size: 23px;
   padding: 25px;
-  text-align: left;
+  text-align: center;
   transition: transform 0.3s ease-in-out;
-  color: var(--color4);
+  color: var(--color1);
   width: 100%;
   margin-bottom: 70px;
   opacity: 0;
@@ -910,24 +908,72 @@ nav a:hover::before {
   transition: opacity .4s ease-out, transform .4s ease-out;
   will-change: opacity, transform;
   pointer-events: none; 
-  margin-bottom: 0px;
+  margin: 20px !important;
 }
-
 .certificateItem.slideLeftToRight {
   opacity: 1;
   transform: translateX(0);
   pointer-events: auto; 
 }
-
+.certificateContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 2px 2px 10px black;
+  
+}
 .certificateItem h3 {
   font-size: 25px; 
   font-weight: bold; 
   margin-top: 0px; 
 }
 
-.certificateItem li{
-  margin-bottom: 30px;
-} 
+.block{
+
+  height: 250px;
+  width: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    cursor:pointer;
+    position:relative;
+    padding:0px 0px;
+    font-size:25px;
+    border-top-right-radius:10px;
+    border-bottom-left-radius:10px;
+    transition:all 1s;
+    &:after,&:before{
+      content:" ";
+      width:10px;
+      height:10px;
+      position:absolute;
+      transition:all 1s;
+      }
+    &:after{
+      top:-1px;
+      left:-1px;
+      border-top:5px solid var(--color1);
+      border-left:5px solid var(--color1);
+    }
+    &:before{
+      bottom:-1px;
+      right:-1px;
+      border-bottom:5px solid var(--color1);
+      border-right:5px solid var(--color1);
+    }
+    &:hover{
+      border-top-right-radius:0px;
+    border-bottom-left-radius:0px;
+      &:before,&:after{
+        
+        width:101.8%;
+        height:104%;
+      }
+    }
+  }
 
 .footer h4{
   font-size: 30px;
