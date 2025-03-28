@@ -815,34 +815,34 @@ nav a:hover::before {
 
 .educationItem ul {
   list-style-type: none;  /* Removes default bullet points */
-  padding-left: 0;        /* Removes padding from the left */
+  padding-left: 0;        
 }
 
 .educationItem li {
   position: relative;
-  padding-left: 30px;  /* Space for the dot */
-  margin-bottom: 40px; /* Adjust space between list items */
+  padding-left: 30px;  
+  margin-bottom: 40px; 
 }
 
 .educationItem li::before {
   content: '';               /* Creates an empty pseudo-element */
   position: absolute;
-  left: 0;                   /* Positions it at the left */
-  top: 10px;                 /* Adjust the vertical position */
-  width: 10px;               /* Size of the dot */
-  height: 10px;              /* Size of the dot */
-  background-color: var(--color2);    /* Dot color */
-  border-radius: 50%;        /* Makes it circular */
+  left: 0;                   
+  top: 10px;                 
+  width: 10px;               
+  height: 10px;              
+  background-color: var(--color2);    
+  border-radius: 50%;        
 }
 
 .educationItem li::after {
-  content: '';                /* Creates an empty pseudo-element */
+  content: '';                
   position: absolute;
-  left: 4px;                  /* Adjust to align with the dot */
-  top: 20px;                  /* Position the vertical line below the dot */
-  width: 2px;                 /* Width of the vertical line */
-  height: 100%;               /* Make the vertical line span the entire height */
-  background-color: var(--color2);     /* Line color */
+  left: 4px;                  
+  top: 20px;                  
+  width: 2px;                
+  height: 100%;               
+  background-color: var(--color2);     
 }
 
 .educationItem ul {
