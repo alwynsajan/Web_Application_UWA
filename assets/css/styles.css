@@ -247,9 +247,9 @@ nav a:hover::before {
   right: 150px; 
   top: 15%; 
   transform: translateY(-50%); 
-  width: 500px; 
-  height: 500px; 
-  border-radius: 30%; 
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
   border: 9px solid var(--color2);
   object-fit: cover;
   transition: font-size 0.4s ease-in-out; 
@@ -500,6 +500,7 @@ nav a:hover::before {
 .skillSection {
   background-color: var(--color2);
   padding: 50px 0;
+  margin: 20px;
 }
 
 .skills {
@@ -586,6 +587,11 @@ nav a:hover::before {
   transform: translateY(0);
 }
 
+.experienceSection{
+  background-color: var(--color1);
+  margin: 20px;
+}
+
 .experience {
   color: var(--color2);
   opacity: 0;
@@ -594,6 +600,7 @@ nav a:hover::before {
   will-change: opacity, transform;
   pointer-events: none; 
   margin-bottom: 0px;
+  
 }
 
 .experience.slideLeftToRight {
@@ -621,6 +628,7 @@ nav a:hover::before {
 
 .projectSection {
   background-color: var(--color2);
+  margin: 20px;
 }
 
 .projects {
@@ -710,6 +718,7 @@ nav a:hover::before {
   transition: opacity 0.4s ease-out, transform 0.4s ease-out;
   will-change: opacity, transform;
   pointer-events: none;
+  align-items: center;
 }
 
 .navButton.slideLeftToRight {
@@ -796,6 +805,8 @@ nav a:hover::before {
   background-color: var(--color1);
   height:650px;
   overflow: hidden;
+  margin: 20px;
+
 }
 
 .education {
@@ -887,6 +898,7 @@ nav a:hover::before {
 
 .certificateSection{
   background-color: var(--color2);
+  margin: 20px;
 }
 
 .certificates{
