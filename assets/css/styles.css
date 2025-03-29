@@ -447,6 +447,7 @@ nav a:hover::before {
     left: 20px; 
     top: 35%;
     transform: translateY(-50%); 
+    text-align: center;
   }
   .headerSub {
     font-size: 20px !important; 
@@ -466,11 +467,6 @@ nav a:hover::before {
     font-size: 20px;
   }
 
-  .contact {
-    top: 70%;
-    left: 250px;
-    font-size: 18px;
-  }
 }
 
 .profile,.skills,.experience,.projects,.certificates,.education{
