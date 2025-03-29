@@ -37,8 +37,8 @@ header {
 
 /* Navigation Bar */
 nav {
+  margin-top: 0px;
   font-family: var(--main-font);
-  /* font-weight: bold; */
   font-size: 18px; 
   height: 80px; 
   letter-spacing: 1px;
@@ -51,6 +51,7 @@ nav {
   right: 0;
   z-index: 1;
   transition: height 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  margin-top: 0px;
 }
 
 .nav-scrolled {
