@@ -13,7 +13,10 @@ html {
 header {
   height: 100vh; 
   background: linear-gradient(to bottom,var( --color1), #bfb698);
-  margin:20px;
+  margin-top:5px;
+  margin-bottom:20px;
+  margin-left:20px;
+  margin-right:20px;
 }
 
 
@@ -37,7 +40,8 @@ header {
 
 /* Navigation Bar */
 nav {
-  margin-top: 0px;
+  margin-right: 20px;
+  margin-left: 20px;
   font-family: var(--main-font);
   font-size: 18px; 
   height: 80px; 
@@ -51,7 +55,6 @@ nav {
   right: 0;
   z-index: 1;
   transition: height 0.4s ease-in-out, background-color 0.4s ease-in-out;
-  margin-top: 0px;
 }
 
 .nav-scrolled {
