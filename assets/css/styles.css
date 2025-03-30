@@ -250,7 +250,7 @@ nav a:hover::before {
 .alwyn_image {
   position: absolute; 
   right: 150px; 
-  top: 15%; 
+  top: 25%; 
   transform: translateY(-50%); 
   max-width: 100%;
   height: auto;
@@ -469,7 +469,7 @@ nav a:hover::before {
 
 }
 
-.profile,.skills,.experience,.projects,.certificates,.education{
+.profile,.skills,.experience,.projects,.certificates,.education,.references{
   font-family: var(--main-font);
   font-weight: bold;
   font-size: 55px;
@@ -999,6 +999,25 @@ nav a:hover::before {
       margin: 0 auto 30px; /* Center it and reduce bottom margin */
     }
   }
+
+  .referencesSection{
+    background-color: var(--color3);
+    margin: 20px;
+    }
+    
+    .references{
+      color: var(--color4);
+    }
+  
+    .referenceItem h3 {
+      font-size: 25px; 
+      font-weight: bold; 
+      color: var(--color4);
+      margin-top: 0px; 
+    }
+    .referenceItem li{
+      margin-bottom: 40px;
+    }
 
 .footer h4{
   font-size: 30px;
