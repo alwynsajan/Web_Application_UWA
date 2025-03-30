@@ -20,6 +20,7 @@ header {
     font-size: 55px;
     font-weight: bold;
     margin-top: 40px;
+    margin-bottom: 40px;
 
 }
 
@@ -62,6 +63,11 @@ header {
   }
 
   .CssSection{
+    margin: 20px;
+    background-color: var(--color1);
+  }
+
+  .javaScriptSection{
     margin: 20px;
     background-color: var(--color1);
   }
