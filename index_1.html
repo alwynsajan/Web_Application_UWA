@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Practices Checklist</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { max-width: 600px; margin: auto; }
+        .best-practice { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid #ccc; }
+        #summary { font-weight: bold; margin-top: 20px; }
+        #reward img { max-width: 100%; border-radius: 10px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Best Practices Checklist</h2>
+    <div id="practices"></div>
+    <p id="summary">You have met <span id="count">0</span> best practices.</p>
+    <div id="reward"></div>
+</div>
+
+<script>
+    // Define the list of best practices
+    const bestPractices = [
+        { id: "responsive", text: "Website is mobile responsive" },
+        { id: "seo", text: "SEO-friendly URLs are used" },
+        { id: "accessible", text: "Website follows accessibility guidelines" },
+        { id: "fast", text: "Website loads in under 3 seconds" },
+        { id: "secure", text: "HTTPS is enabled" }
+    ];
+
+    const practicesContainer = document.getElementById("practices");
+    const countDisplay = document.getElementById("count");
+    const rewardContainer = document.getElementById("reward");
+
+    // Load selected practices from localStorage
+    function loadSelectedPractices() {
+        return JSON.parse(localStorage.getItem("selectedPractices")) || {};
+    }
+
+    // Save selected practices to localStorage
+    function saveSelectedPractices(selectedPractices) {
+        localStorage.setItem("selectedPractices", JSON.stringify(selectedPractices));
+    }
+
+    // Function to update the summary count
+    function updateSummary() {
+        const selectedPractices = loadSelectedPractices();
+        const selectedCount = Object.values(selectedPractices).filter(Boolean).length;
+        countDisplay.textContent = selectedCount;
+
+        // Define success criteria: 4/5 best practices met
+        if (selectedCount >= 4) {
+            fetchRandomAnimal();
+        } else {
+            rewardContainer.innerHTML = "";
+        }
+    }
+
+    // Function to fetch and display a random animal image as a reward
+    function fetchRandomAnimal() {
+        fetch("https://random.dog/woof.json") // Using the Random Dog API
+            .then(response => response.json())
+            .then(data => {
+                rewardContainer.innerHTML = `<img src="${data.url}" alt="Cute Animal">`;
+            })
+            .catch(error => console.error("Error fetching image:", error));
+    }
+
+    // Render the best practices checkboxes
+    function renderPractices() {
+        const selectedPractices = loadSelectedPractices();
+
+        bestPractices.forEach(practice => {
+            const div = document.createElement("div");
+            div.className = "best-practice";
+
+            const label = document.createElement("label");
+            label.textContent = practice.text;
+            
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.id = practice.id;
+            checkbox.checked = selectedPractices[practice.id] || false;
+
+            checkbox.addEventListener("change", () => {
+                selectedPractices[practice.id] = checkbox.checked;
+                console.log(selectedPractices,practice.id)
+                saveSelectedPractices(selectedPractices);
+                updateSummary();
+            });
+
+            div.appendChild(label);
+            div.appendChild(checkbox);
+            practicesContainer.appendChild(div);
+        });
+
+        updateSummary();
+    }
+
+    // Initialize the page
+    renderPractices();
+</script>
+
+</body>
+</html>

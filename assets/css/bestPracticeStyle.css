@@ -1,0 +1,67 @@
+:root {
+    --color1: #E5E5CB;
+    --color2: #D5CEA3;
+    --color3:#1A120B;
+    --color4:#3C2A21;
+    --main-font: 'poppins', sans-serif;
+  }
+
+header {
+    height: 70vh; 
+    background: linear-gradient(to bottom,black, #bfb698);
+    margin-top:5px;
+    margin-bottom:20px;
+    margin-left:20px;
+    margin-right:20px;
+  }
+
+.heading{
+    font-family: var(--main-font);
+    font-size: 55px;
+    font-weight: bold;
+    margin-top: 40px;
+
+}
+
+.htmlSection{
+    background-color: var(--color1);
+    margin: 20px;
+}
+
+.block h2{
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+}
+/* .block{
+    margin: 40px;
+} */
+
+.block1 {
+    width: 360px;
+    height: 300px;
+    font-size: 20px;
+    background-color: var(--color2);
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition:all .5s;
+    border: 5px solid var(--color3);
+    border-radius: 10%;
+  }
+
+  .block1:hover{
+    transform: scale(1.10);
+  }
+
+  ._checkbox{
+    text-align: center;
+  }
+
+  .CssSection{
+    margin: 20px;
+    background-color: var(--color1);
+  }
