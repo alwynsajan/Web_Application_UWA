@@ -32,11 +32,10 @@ function fetchRandomAnimal() {
         .catch(error => console.error("Error fetching image:", error));
 }
 
-const idList = ["H1", "H2", "H3", "H4", "H5", "H6"];
+const idList = ["H1", "H2", "H3", "H4", "H5", "H6","C1", "C2", "C3", "C4", "C5", "C6"];
 
 function addEventListener() {
     const selectedPractices = loadSelectedPractices();
-    console.log("selectedPractices :",selectedPractices);
 
     idList.forEach(id => {
         const checkbox = document.getElementById(id);
