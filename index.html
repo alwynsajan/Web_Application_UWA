@@ -3,287 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Practices</title>
+    <title>Best Practices | Alwyn's Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/bestPracticeStyle.css"> 
+    <link rel="stylesheet" href="assets/css/bestPracticeStyle.css">
     <script src="assets/javaScript/bestPracticeJS.js" defer></script>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbarDefault navbarFixedTop">
+        <div class="container">
+            <div class="navbarHeader">
+                <a class="navbarBrand" href="index.html">Best Coding Practices</a>
+            </div>
+            <div class="navbarCollapse">
+                <ul class="nav navbarNav navbarRight">
+                    <li><a href="about.html" target="_blank">About Me</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <header>
-
+    <!-- Header Section -->
+    <header class="bestPracticesHeader">
+        <div class="container">
+            <div class="headerContent">
+                <h1>Web Development Best Practices</h1>
+                <p>Follow these guidelines to write clean, maintainable, and efficient code</p>
+            </div>
+        </div>
     </header>
 
-    <!-- HTML Best Practice Section. -->
-    <section class="htmlSection">
+    <!-- Progress Bar (fixed on scroll) -->
+    <div id="progressContainer" class="progressContainer">
         <div class="container">
-            <div class="row">
-                <h2 class="heading">HTML Best Practices.</h2>
+            <div class="progressInfo">
+                <div class="progressStats">
+                    Completed: <span id="completedCount">0</span>/18
+                </div>
+                <div class="progressBarContainer">
+                    <div id="progressBar" class="progressBar"></div>
+                </div>
+                <button id="viewRewardBtn" class="viewRewardBtn" disabled>View Reward</button>
             </div>
-            <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1">
-                        <h2>Use Proper Semantic HTML</h2>
-                        <p>Semantic HTML uses meaningful tags to define content, helping browsers 
-                            and assistive technologies understand a webpage's structure.</p>
+        </div>
+    </div>
 
-                            <div class="_checkbox">
-                                <input type="checkbox" id="H1">
-                                <label for="H1">Check me</label>
-                            </div>
+    <!-- Main Content -->
+    <div class="mainContent">
+        <!-- HTML Best Practice Section -->
+        <section class="practiceSection htmlSection">
+            <div class="container">
+                <div class="sectionHeader">
+                    <div class="sectionIcon">
+                        <i class="fab fa-html5"></i>
                     </div>
+                    <h2 class="sectionTitle">HTML Best Practices</h2>
                 </div>
-
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1">
-                        <h2>Logical Nesting of Elements</h2>
-                        <p>Logical nesting organizes elements to show their relationships and hierarchy, 
-                            ensuring a clear and structured document flow.</p>
-
-                            <div class="_checkbox">
-                                <input type="checkbox" id="H2">
-                                <label for="H2">Check me</label>
-                            </div>
+                <div class="practiceGrid">
+                    <!-- HTML Practice Items 1-6 -->
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Use Proper Semantic HTML</h3>
+                            <p>Semantic HTML uses meaningful tags to define content, helping browsers 
+                                and assistive technologies understand a webpage's structure.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="H1">
+                            <span class="checkmark"></span>
+                        </label>
                     </div>
-                </div>
 
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1">
-                        <h2>Indentation and Formatting</h2>
-                        <p>Indentation and formatting don't affect browser interpretation but improve code readability 
-                            and ease of modification for developers.</p>
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Logical Nesting of Elements</h3>
+                            <p>Logical nesting organizes elements to show their relationships and hierarchy, 
+                                ensuring a clear and structured document flow.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="H2">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
 
-                            <div class="_checkbox">
-                                <input type="checkbox" id="H3">
-                                <label for="H3">Check me</label>
-                            </div>
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Indentation and Formatting</h3>
+                            <p>Indentation and formatting don't affect browser interpretation but improve code readability 
+                                and ease of modification for developers.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="H3">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Clear and Descriptive Naming</h3>
+                            <p>Use clear, descriptive names for IDs and classes to quickly convey the content or purpose of 
+                                elements for better understanding.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="H4">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Consistent Document Flow</h3>
+                            <p>Consistent document flow organizes content logically and orderly. 
+                                Structure HTML to follow a clear progression from top to bottom.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="H5">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Comments and Documentation</h3>
+                            <p>Comments and documentation clarify code purpose and structure, aiding future maintenance 
+                                and collaboration by making it easier to understand.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="H6">
+                            <span class="checkmark"></span>
+                        </label>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="row">
+        <!-- CSS Best Practice Section -->
+        <section class="practiceSection cssSection">
+            <div class="container">
+                <div class="sectionHeader">
+                    <div class="sectionIcon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h2 class="sectionTitle">CSS Best Practices</h2>
+                </div>
+                <div class="practiceGrid">
+                    <!-- CSS Practice Items 1-6 -->
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Organize Code with Comments</h3>
+                            <p>Organize CSS into logical groups with comments before each group to improve readability and
+                                 make editing easier in large files.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="C1">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
 
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1">
-                        <h2>Clear and Descriptive Naming</h2>
-                        <p>Use clear, descriptive names for IDs and classes to quickly convey the content or purpose of 
-                            elements for better understanding.</p>
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Maintain Consistent Formatting</h3>
+                            <p>Maintain consistent line breaks in CSS for better readability and easier navigation, 
+                                especially in long and complex stylesheets.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="C2">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
 
-                            <div class="_checkbox">
-                                <input type="checkbox" id="H4">
-                                <label for="H4">Check me</label>
-                            </div>
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Minimize the use of <code>!important</code></h3>
+                            <p>Limit the use of <code>!important</code> in CSS to prevent conflicts with styles and maintain better control 
+                                over styling rules.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="C3">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Efficient Styling with Selectors</h3>
+                            <p>Use class and ID selectors in CSS to improve performance, avoid conflicts, and make the code easier to maintain.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="C4">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Use Utility Classes for Reusability</h3>
+                            <p>Create utility classes in CSS to apply common styles across elements, promoting reuse and reducing redundant code.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="C5">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Organizing and Structuring</h3>
+                            <p>Organize CSS into separate files based on functionality for better maintainability and easier management of styles.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="C6">
+                            <span class="checkmark"></span>
+                        </label>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1">
-                        <h2>Consistent Document Flow</h2>
-                        <p>Consistent document flow organizes content logically and orderly. 
-                            Structure HTML to follow a clear progression from top to bottom.</p>
+        <!-- JavaScript Best Practice Section -->
+        <section class="practiceSection jsSection">
+            <div class="container">
+                <div class="sectionHeader">
+                    <div class="sectionIcon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <h2 class="sectionTitle">JavaScript Best Practices</h2>
+                </div>
+                <div class="practiceGrid">
+                    <!-- JS Practice Items 1-6 -->
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Use <code>let</code> and <code>const</code> Instead of var</h3>
+                            <p><code>let</code> and <code>const</code> have block scope, which helps prevent common bugs related to variable hoisting and scope issues.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="J1">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
 
-                            <div class="_checkbox">
-                                <input type="checkbox" id="H5">
-                                <label for="H5">Check me</label>
-                            </div>
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Create Straightforward Functions</h3>
+                            <p>Functions should focus on one task, making them simpler, easier to test, debug, and maintain
+                                 for better code clarity and efficiency.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="J2">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Use Strict Equality (===) and Inequality (!==)</h3>
+                            <p>Strict equality ensures both value and type match, preventing unintended type conversions and making 
+                                comparisons more reliable.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="J3">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Use Default Parameters</h3>
+                            <p>Default parameters handle missing arguments, ensuring functions run smoothly without errors by
+                                 assigning predefined values when no input is given.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="J4">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Avoid Usage of Global Variables</h3>
+                            <p>Limit global variables to avoid conflicts and bugs. Declare variables within their necessary scope for 
+                                better maintainability and reliability.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="J5">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+
+                    <div class="practiceItem">
+                        <div class="practiceContent">
+                            <h3>Use Comments Appropriately</h3>
+                            <p>Comments should explain the why behind the code, not the what. They are useful for complex logic or important details.</p>
+                        </div>
+                        <label class="practiceCheckbox">
+                            <input type="checkbox" id="J6">
+                            <span class="checkmark"></span>
+                        </label>
                     </div>
                 </div>
+            </div>
+        </section>
+    </div>
 
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1" style="margin-bottom: 50px;">
-                        <h2>Comments and Documentation</h2>
-                        <p>Comments and documentation clarify code purpose and structure, aiding future maintenance 
-                            and collaboration by making it easier to understand.</p>
-
-                            <div class="_checkbox">
-                                <input type="checkbox" id="H6">
-                                <label for="H6">Check me</label>
-                            </div>
-                    </div>
-                </div>  
+    <!-- Reward Section -->
+    <section id="rewardSection" class="rewardSection">
+        <div class="container">
+            <h2>Your Reward</h2>
+            <div id="rewardContainer" class="rewardContainer">
+                <p>Complete at least 15 best practices to unlock your reward!</p>
             </div>
         </div>
     </section>
 
-    <!-- CSS Best Practice Section. -->
-    <section class="CssSection">
 
-        <div class="container">
-            <div class="row">
-                <h2 class="heading">CSS Best Practices.</h2>
-            </div>
-            <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1">
-                        <h2>Organize Code with Comments</h2>
-                        <p>Organize CSS into logical groups with comments before each group to improve readability and
-                             make editing easier in large files.</p>
-
-                            <div class="_checkbox">
-                                <input type="checkbox" id="C1">
-                                <label for="C1">Check me</label>
-                            </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1">
-                        <h2>Maintain Consistent Formatting</h2>
-                        <p>Maintain consistent line breaks in CSS for better readability and easier navigation, 
-                            especially in long and complex stylesheets.</p>
-
-                            <div class="_checkbox">
-                                <input type="checkbox" id="C2">
-                                <label for="C2">Check me</label>
-                            </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1">
-                        <h2>Minimize the use of <code>!important </code></h2>
-                        <p>Limit the use of <code>!important</code> in CSS to prevent conflicts with styles and maintain better control 
-                            over styling rules.</p>
-
-                            <div class="_checkbox">
-                                <input type="checkbox" id="C3">
-                                <label for="C3">Check me</label>
-                            </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1">
-                        <h2>Efficient Styling with Selectors</h2>
-                        <p>Use class and ID selectors in CSS to improve performance, avoid conflicts, and make the code easier to maintain.</p>
-
-                            <div class="_checkbox">
-                                <input type="checkbox" id="C4">
-                                <label for="C4">Check me</label>
-                            </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1">
-                        <h2>Use Utility Classes for Reusability</h2>
-                        <p>Create utility classes in CSS to apply common styles across elements, promoting reuse and reducing redundant code.</p>
-
-                            <div class="_checkbox">
-                                <input type="checkbox" id="C5">
-                                <label for="C5">Check me</label>
-                            </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1" style="margin-bottom: 50px;" >
-                        <h2>Organizing and Structuring</h2>
-                        <p>Organize CSS into separate files based on functionality for better maintainability and easier management of styles.</p>
-
-                            <div class="_checkbox">
-                                <input type="checkbox" id="H3">
-                                <label for="H3">Check me</label>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-    </section>
-
-    <!-- JavaScript Best Practice Section. -->
-    <section class="javaScriptSection">
-
-        <div class="container">
-            <div class="row">
-                <h2 class="heading">javaScript Best Practices.</h2>
-            </div>
-            <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1">
-                        <h2>Use <code>let</code> and <code>const</code> Instead of var:</h2>
-                        <p><code>let</code> and <code>const</code> have block scope, which helps prevent common bugs related to variable hoisting and scope issues.</p>
-
-                            <div class="_checkbox">
-                                <input type="checkbox" id="J1">
-                                <label for="J1">Check me</label>
-                            </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1">
-                        <h2>Create straightforward functions</h2>
-                        <p>Functions should focus on one task, making them simpler, easier to test, debug, and maintain
-                             for better code clarity and efficiency.</p>
-
-                            <div class="_checkbox">
-                                <input type="checkbox" id="J2">
-                                <label for="J2">Check me</label>
-                            </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1">
-                        <h2>Use Strict Equality (===) and Inequality (!==)</h2>
-                        <p>Strict equality ensures both value and type match, preventing unintended type conversions and making 
-                            comparisons more    reliable.</p>
-
-                            <div class="_checkbox">
-                                <input type="checkbox" id="J3">
-                                <label for="J3">Check me</label>
-                            </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1">
-                        <h2>Use Default Parameters</h2>
-                        <p>Default parameters handle missing arguments, ensuring functions run smoothly without errors by
-                             assigning predefined values when no input is given.</p>
-
-                            <div class="_checkbox">
-                                <input type="checkbox" id="J4">
-                                <label for="J4">Check me</label>
-                            </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1">
-                        <h2>Avoid usage of Global Variables</h2>
-                        <p>Limit global variables to avoid conflicts and bugs. Declare variables within their necessary scope for 
-                            better maintainability and reliability.</p>
-
-                            <div class="_checkbox">
-                                <input type="checkbox" id="J5">
-                                <label for="J5">Check me</label>
-                            </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="block block1" style="margin-bottom: 50px;">
-                        <h2>Use Comments appropriately</h2>
-                        <p>Comments should explain the why behind the code, not the what. They are useful for complex logic or important details.</p>
-
-                            <div class="_checkbox">
-                                <input type="checkbox" id="H3">
-                                <label for="H3">Check me</label>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-    </section>
-    
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,73 +1,518 @@
 :root {
-    --color1: #E5E5CB;
-    --color2: #D5CEA3;
-    --color3:#1A120B;
-    --color4:#3C2A21;
-    --main-font: 'poppins', sans-serif;
-  }
-
-header {
-    height: 70vh; 
-    background: linear-gradient(to bottom,black, #bfb698);
-    margin-top:5px;
-    margin-bottom:20px;
-    margin-left:20px;
-    margin-right:20px;
-  }
-
-.heading{
-    font-family: var(--main-font);
-    font-size: 55px;
-    font-weight: bold;
-    margin-top: 40px;
-    margin-bottom: 40px;
-
+  --colorPrimary: #1e2a5e;
+  --colorSecondary: #55679c;
+  --colorAccent: #e1d7b7;
+  --colorSuccess: #4CAF50;
+  --mainFont: 'Poppins', sans-serif;
 }
 
-.htmlSection{
-    background-color: var(--color1);
-    margin: 20px;
+body {
+  font-family: var(--mainFont);
+  color: #333;
+  padding-top: 60px;
+  background-color: #f9f9f9;
 }
 
-.block h2{
-    font-size: 25px;
-    font-weight: bold;
-    padding: 20px;
-    text-align: center;
+/* Navigation Bar */
+.navbarDefault {
+  background-color: var(--colorPrimary);
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  min-height: 60px;
 }
-/* .block{
-    margin: 40px;
-} */
 
-.block1 {
-    width: 360px;
-    height: 300px;
-    font-size: 20px;
-    background-color: var(--color2);
-    text-align: justify;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    transition:all .5s;
-    border: 5px solid var(--color3);
-    border-radius: 10%;
-  }
+.navbarFixedTop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
 
-  .block1:hover{
-    transform: scale(1.10);
-  }
+.navbarBrand {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  height: 60px;
+  line-height: 30px;
+  padding: 15px;
+  float: left;
+}
 
-  ._checkbox{
-    text-align: center;
-  }
+.navbarBrand:hover {
+  color: var(--colorAccent);
+  text-decoration: none;
+}
 
-  .CssSection{
-    margin: 20px;
-    background-color: var(--color1);
-  }
+.navbarNav {
+  margin: 0;
+  float: right;
+}
 
-  .javaScriptSection{
-    margin: 20px;
-    background-color: var(--color1);
+.navbarNav > li > a {
+  color: white;
+  padding: 20px 15px;
+  line-height: 20px;
+  display: block;
+}
+
+.navbarNav > li > a:hover {
+  color: var(--colorAccent);
+  background-color: transparent;
+}
+
+/* Header Section */
+.bestPracticesHeader {
+  background: linear-gradient(135deg, var(--colorPrimary), var(--colorSecondary));
+  color: white;
+  padding: 120px 0 100px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.headerContent {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.bestPracticesHeader h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.bestPracticesHeader p {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Progress Container */
+.progressContainer {
+  background-color: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 60px;
+  z-index: 100;
+  border-bottom: 1px solid #eee;
+}
+
+.progressInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progressStats {
+  font-weight: 500;
+  color: var(--colorPrimary);
+  margin-right: 20px;
+  font-size: 1.5rem;
+}
+
+#completedCount {
+  color: var(--colorSuccess);
+  font-weight: 600;
+}
+
+.progressBarContainer {
+  flex-grow: 1;
+  height: 12px;
+  background-color: #eee;
+  border-radius: 6px;
+  margin: 0 20px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: var(--colorSuccess);
+  width: 0%;
+  transition: width 0.5s ease;
+}
+
+.viewRewardBtn {
+  background-color: var(--colorPrimary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.viewRewardBtn:hover {
+  background-color: var(--colorSecondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.viewRewardBtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Practice Sections */
+.practiceSection {
+  padding: 80px 0;
+  margin-bottom: 30px;
+}
+
+.htmlSection {
+  background-color: rgba(225, 215, 183, 0.1);
+  border-top: 3px solid #E34F26;
+  border-bottom: 3px solid #E34F26;
+}
+
+.cssSection {
+  background-color: rgba(30, 42, 94, 0.05);
+  border-top: 3px solid #1572B6;
+  border-bottom: 3px solid #1572B6;
+}
+
+.jsSection {
+  background-color: rgba(85, 103, 156, 0.05);
+  border-top: 3px solid #F7DF1E;
+  border-bottom: 3px solid #F7DF1E;
+}
+
+.sectionHeader {
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.sectionIcon {
+  font-size: 3rem;
+  margin-right: 25px;
+}
+
+.htmlSection .sectionIcon {
+  color: #E34F26;
+}
+
+.cssSection .sectionIcon {
+  color: #1572B6;
+}
+
+.jsSection .sectionIcon {
+  color: #F7DF1E;
+}
+
+.sectionTitle {
+  font-weight: 600;
+  color: var(--colorPrimary);
+  margin: 0;
+  font-size: 4.5rem;
+}
+
+.practiceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 40px;
+}
+
+.practiceItem {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(30, 42, 94, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(30, 42, 94, 0.08);
+}
+
+.practiceItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(30, 42, 94, 0.12);
+  border-color: rgba(30, 42, 94, 0.16);
+}
+
+.practiceItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--colorSecondary);
+  transition: width 0.3s ease;
+}
+
+.practiceItem:hover::before {
+  width: 6px;
+}
+
+.practiceContent {
+  margin-bottom: 24px;
+}
+
+.practiceContent h3 {
+  color: var(--colorPrimary);
+  margin: 0 0 16px 0;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  position: relative;
+  padding-left: 16px;
+}
+
+.practiceContent h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  height: 60%;
+  width: 4px;
+  background: var(--colorSuccess);
+  border-radius: 2px;
+}
+
+.practiceContent p {
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+  font-size: 1.5rem;
+  padding-left: 16px;
+  text-align: justify;
+}
+
+.practiceCheckboxContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.practiceCheckbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.practiceCheckbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: relative;
+  height: 24px;
+  width: 24px;
+  background-color: white;
+  border: 2px solid var(--colorSecondary);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.practiceCheckbox:hover input ~ .checkmark {
+  background-color: rgba(30, 42, 94, 0.04);
+}
+
+.practiceCheckbox input:checked ~ .checkmark {
+  background-color: var(--colorSuccess);
+  border-color: var(--colorSuccess);
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-top: -2px;
+}
+
+.practiceCheckbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .practiceItem {
+    padding: 24px;
   }
+  
+  .practiceContent h3 {
+    font-size:  2.5rem;
+    margin-bottom: 12px;
+  }
+  
+  .checkmark {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+/* Reward Section */
+.rewardSection {
+  background-color: var(--colorPrimary);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.rewardSection h2 {
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+.rewardContainer {
+  background-color: white;
+  border-radius: 12px;
+  padding: 40px;
+  min-height: 500px;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--colorPrimary);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.rewardContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(245,245,245,0.95));
+  z-index: 1;
+}
+
+.rewardContainer > * {
+  position: relative;
+  z-index: 2;
+}
+
+.rewardContainer img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 8px;
+  object-fit: contain;
+  margin-top: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.rewardContainer p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.rewardContainer .congratsMessage {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--colorSuccess);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Footer */
+.bestPracticesFooter {
+  background-color: var(--colorPrimary);
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.bestPracticesFooter p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+  .practiceGrid {
+      grid-template-columns: 1fr;
+  }
+  
+  .practiceItem {
+      padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bestPracticesHeader {
+      padding: 80px 0 60px;
+  }
+  
+  .bestPracticesHeader h1 {
+      font-size: 2.5rem;
+  }
+  
+  .bestPracticesHeader p {
+      font-size: 1.2rem;
+  }
+  
+  .sectionHeader {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  .sectionIcon {
+      margin-bottom: 20px;
+  }
+  
+  .progressInfo {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  .progressStats {
+      margin-bottom: 15px;
+  }
+  
+  .progressBarContainer {
+      width: 100%;
+      margin: 15px 0;
+  }
+  
+  .viewRewardBtn {
+      align-self: flex-end;
+      margin-top: 15px;
+      font-size: 1.2rem;
+      padding: 8px 15px;
+  }
+  
+  .rewardContainer {
+      min-height: 300px;
+      padding: 20px;
+  }
+  
+  .sectionTitle {
+      font-size: 4rem;
+  }
+  
+  .practiceContent h3 {
+      font-size: 2.3rem;
+  }
+  
+  .rewardContainer .congratsMessage {
+      font-size: 1.5rem;
+  }
+}
