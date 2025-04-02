@@ -26,11 +26,13 @@ function updateSummary() {
     
     // Check if user has met success criteria (15/18)
     if (selectedCount >= 15) {
+        completedCount.classList.add('reward-unlocked');
         viewRewardBtn.disabled = false;
         if (!rewardContainer.querySelector('img')) {
             fetchRandomAnimal();
         }
     } else {
+        completedCount.classList.remove('reward-unlocked');
         viewRewardBtn.disabled = true;
         // Remove reward image if count falls below 15
         rewardContainer.innerHTML = '<p>Complete at least 15 best practices to unlock your reward!</p>';
@@ -53,9 +55,14 @@ function fetchRandomAnimal() {
                 const img = document.createElement('img');
                 img.src = data[0].url;
                 img.alt = 'Cute Animal Reward';
+                img.style.maxWidth = '100%';
+                img.style.maxHeight = '80%';
+                img.style.objectFit = 'contain';
                 img.onload = () => {
                     rewardContainer.innerHTML = `
-                        <div class="congratsMessage">Congratulations!</div>
+                        <div class="congratsMessage">
+                            <i class="fa fa-trophy" aria-hidden="true"></i> Congratulations!
+                        </div>
                         <p>You've unlocked this cute reward!</p>
                     `;
                     rewardContainer.appendChild(img);
