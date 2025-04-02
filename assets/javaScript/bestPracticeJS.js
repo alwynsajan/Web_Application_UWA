@@ -52,7 +52,7 @@ function fetchRandomAnimal() {
             if (data && data[0] && data[0].url) {
                 const img = document.createElement('img');
                 img.src = data[0].url;
-                img.alt = 'Cute Cat Reward';
+                img.alt = 'Cute Animal Reward';
                 img.onload = () => {
                     rewardContainer.innerHTML = `
                         <div class="congratsMessage">Congratulations!</div>
