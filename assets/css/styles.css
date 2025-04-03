@@ -611,185 +611,224 @@ nav a:hover::before {
   margin-top: 0px; 
 }
 
+/* Project Section */
 .projectSection {
   background-color: var(--color2);
   margin: 20px;
-  border-radius: 10px;
+  border-radius: 16px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Project Title - Left Aligned */
 .projects {
   color: var(--color1);
   opacity: 0;
-  transform: translateX(50px);
+  transform: translateX(-50px);
   transition: opacity 0.4s ease-out, transform 0.4s ease-out;
   will-change: opacity, transform;
-  pointer-events: none; 
+  pointer-events: none;
+  margin-bottom: 40px;
+  font-size: 55px;
+  font-weight: 600;
+  text-align: left;
+  width: 100%;
 }
 
 .projects.fadeIn {
   opacity: 1;
   transform: translateX(0);
-  pointer-events: auto; 
+  pointer-events: auto;
 }
 
+/* Modern Project Card */
 .projectItem {
   font-family: var(--main-font);
-  font-size: 23px;
-  padding: 25px;
-  text-align: left;
-  box-shadow: 2px 2px 5px black;
-  border-radius: 8px;
-  transition: transform 0.3s ease-in-out;
+  padding: 30px;
+  background: rgba(30, 42, 94, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   color: var(--color1);
-  width: 100%;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .projectItem h3 {
-  font-size: 25px; 
-  font-weight: bold; 
-  color: var(--color1);
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.projectItem p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover Effect - Gradient Glow */
+.projectItem::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .projectItem:hover {
-  transform: scale(1.05);
-  box-shadow: 2px 2px 5px var(--color1);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .projectItem:hover::before {
   opacity: 1;
-  transform: rotate(-45deg) translateY(100%);
 }
 
-.crmLink {
-  color: var(--color3);
-  text-decoration: none;
-}
-
-.crmLink:hover {
-  color: var(--color1);
-}
-
-.headerRow {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center; 
-  width: 100%; 
-}
-
-/* Styling for the buttons */
-#nextButton, #prevButton {
-  width: 60px;
-  height: 60px;
-  font-size: 35px;
-  font-weight: bold;
-  background-color: var(--color2);
-  color: var(--color1);
-  border: none;
-  cursor: pointer;
-  border-radius: 50%;
-  display: flex;
+/* Project Link with Arrow (No Underline) */
+.projectLink {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 2px 2px 10px black;
-  margin-left: auto;
+  gap: 8px;
+  color: var(--color3);
+  text-decoration: none !important;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.projectLink .arrow {
+  transition: transform 0.3s ease;
+}
+
+.projectLink:hover {
+  color: var(--color1);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.projectLink:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Modern Navigation Buttons with Font Awesome Icons */
+.navContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+  gap: 20px; /* Increased gap between buttons */
 }
 
 .navButton {
-  opacity: 0;
-  transform: translateX(50px);
-  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-  will-change: opacity, transform;
-  pointer-events: none;
+  width: 70px; /* Increased size */
+  height: 70px; /* Increased size */
+  background: transparent; /* Transparent background */
+  color: var(--color1); /* Use color1 for icons */
+  border: 2px solid var(--color1); /* Border instead of background */
+  cursor: pointer;
+  border-radius: 50%; /* Circular buttons */
+  display: flex;
   align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(20px);
 }
 
 .navButton.slideLeftToRight {
   opacity: 1;
   transform: translateX(0);
-  pointer-events: auto;
 }
 
 .navButton:hover {
-  transform: translateX(0) scale(1.25) !important;
-  transition: transform 0.2s ease-out;
+  transform: scale(1.2); /* Scale up on hover */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Glow effect */
+  border-color: var(--color3); /* Change border color on hover */
 }
 
+/* Font Awesome icon styling */
+.navButton .fa {
+  font-size: 28px; /* Larger icon size */
+  transition: all 0.3s ease;
+}
+
+.navButton:hover .fa {
+  color: var(--color3); /* Change icon color on hover */
+  transform: scale(1.1); /* Slight icon scale */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navButton {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .navButton .fa {
+    font-size: 24px;
+  }
+}
+
+/* Header Row Layout */
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/* Project Wrapper */
 #projectWrapper {
-  transition: transform 0.9s ease;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* Holographic Effect */
-.projectItem::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(0deg, transparent, transparent 30%, rgba(0,255,255,0.3));
-  transform: rotate(-45deg);
-  transition: all 0.5s ease;
-  opacity: 0;
-}
-
-.holographic-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #000;
-}
-
-.holographic-card {
-  width: 300px;
-  height: 200px;
-  background: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
-  transition: all 0.5s ease;
-}
-
-.holographic-card h2 {
-  color: #0ff;
-  font-size: 2rem;
-  position: relative;
-  z-index: 2;
-}
-
-.holographic-card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(0deg, transparent, transparent 30%, rgba(0,255,255,0.3));
-  transform: rotate(-45deg);
-  transition: all 0.5s ease;
-  opacity: 0;
-}
-
-.holographic-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0,255,255,0.5);
-}
-
-.holographic-card:hover::before {
-  opacity: 1;
-  transform: rotate(-45deg) translateY(100%);
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projectSection {
+    padding: 30px 20px;
+  }
+  
+  .projects {
+    font-size: 42px;
+  }
+  
+  .projectItem {
+    padding: 25px;
+  }
+  
+  .navButton {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .navButton .fa {
+    font-size: 18px;
+  }
 }
 
 .educationSection{
   background-color: var(--color1);
-  height:650px;
+  height:580px;
   overflow: hidden;
   margin: 20px;
   border-radius: 10px;

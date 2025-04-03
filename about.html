@@ -189,79 +189,89 @@
     </section>
 
     <!-- Project Section -->
-    <section id="projects" class="projectSection">
-      <div class="container">
-        <div class="row Box headerRow">
-          <h2 class="projects">Projects.</h2>
-          <button id="nextButton"  class="navButton">→</button>
-          <button id="prevButton" class="navButton" style="display: none;">←</button>
-        </div>
-        
-        <div id="projectWrapper">
-          <!-- First Two Projects -->
-          <div id="projectSet1">
-            <div class="row">
-              <div class="col-12">
-                <div class="projectItem">
-                    <h3>CUSTOMER MANAGEMENT SYSTEM (CRM) SYSTEM. 
-                      <a href="https://github.com/alwynsajan/CartridgeWorld-CRM" class = "crmLink"target="_blank"> <i>LINK</i> </a>
-                    </h3>
-                    <h3>Freelance, Australia</h3>
-                    <p>Developed a CRM system using Python (Tkinter) and SQL, integrating
-                      product management, sales tracking, invoicing, and daily profit analysis.
-                      Designed an intuitive GUI for seamless user experience and
-                      implemented database-driven analytics to optimize sales performance.
-                    </p>
-                </div>
-              </div>
-            </div>
+<section id="projects" class="projectSection">
+  <div class="container">
+    <div class="headerRow">
+      <h2 class="projects">Projects.</h2>
+      <div class="navContainer">
+        <button id="prevButton" class="navButton" style="display: none;">
+          <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button id="nextButton" class="navButton">
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
     
-            <div class="row">
-              <div class="col-12">
-                <div class="projectItem">
-                  <h3>MULTIPLE CAMERA TRACKING.</h3>
-                  <h3>AllGoVision Technologies Pvt Ltd, India</h3>
-                  <p>Multiple Camera Tracking project involves the development of a system
-                    capable of tracking a vehicle or person across different cameras. This is
-                    achieved through various algorithms, including spatiotemporal scoring
-                    and feature matching.</p>
-                </div>
-              </div>
+    <div id="projectWrapper">
+      <!-- First Two Projects -->
+      <div id="projectSet1">
+        <div class="row">
+          <div class="col-12">
+            <div class="projectItem">
+              <h3>CUSTOMER MANAGEMENT SYSTEM (CRM) SYSTEM</h3>
+              <h3>Freelance, Australia</h3>
+              <p>Developed a CRM system using Python (Tkinter) and SQL, integrating
+                product management, sales tracking, invoicing, and daily profit analysis.
+                Designed an intuitive GUI for seamless user experience and
+                implemented database-driven analytics to optimize sales performance.
+              </p>
+              <a href="https://github.com/alwynsajan/CartridgeWorld-CRM" class="projectLink" target="_blank">
+                View Project <span class="arrow">→</span>
+              </a>
             </div>
           </div>
-    
-          <!-- Second Two Projects (Initially Hidden) -->
-          <div id="projectSet2" style="display: none;">
-            <div class="row">
-              <div class="col-12">
-                <div class="projectItem">
-                  <h3>ANALYTICS.</h3>
-                  <h3>AllGoVision Technologies Pvt Ltd, India</h3>
-                  <p>Analytics is a project focused on processing camera feeds using various
-                    Deep Learning (DL) algorithms according to predefined business logic to
-                    generate desired outputs. This involves extracting meaningful insights and
-                    information from the video streams to enhance security, efficiency, or
-                    decision-making processes.</p>
-                </div>
-              </div>
-            </div>
-    
-            <div class="row">
-              <div class="col-12">
-                <div class="projectItem">
-                  <h3>RECEPTIONIST MONITORING APPLICATION.</h3>
-                  <h3>AllGoVision Technologies Pvt Ltd, India</h3>
-                  <p>The Receptionist Monitoring Application uses facial recognition to identify
-                    receptionists at hospital desks. It stores data, alerts if receptionists are
-                    absent, prevents position swapping, and tracks attendance automatically,
-                    providing comprehensive administrative monitoring.</p>
-                </div>
-              </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="projectItem">
+              <h3>MULTIPLE CAMERA TRACKING</h3>
+              <h3>AllGoVision Technologies Pvt Ltd, India</h3>
+              <p>Multiple Camera Tracking project involves the development of a system
+                capable of tracking a vehicle or person across different cameras. This is
+                achieved through various algorithms, including spatiotemporal scoring
+                and feature matching.</p>
             </div>
           </div>
         </div>
       </div>
-    </section>    
+
+      <!-- Second Two Projects (Initially Hidden) -->
+      <div id="projectSet2" style="display: none;">
+        <div class="row">
+          <div class="col-12">
+            <div class="projectItem">
+              <h3>ANALYTICS</h3>
+              <h3>AllGoVision Technologies Pvt Ltd, India</h3>
+              <p>Analytics is a project focused on processing camera feeds using various
+                Deep Learning (DL) algorithms according to predefined business logic to
+                generate desired outputs. This involves extracting meaningful insights and
+                information from the video streams to enhance security, efficiency, or
+                decision-making processes.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="projectItem">
+              <h3>RECEPTIONIST MONITORING APPLICATION</h3>
+              <h3>AllGoVision Technologies Pvt Ltd, India</h3>
+              <p>The Receptionist Monitoring Application uses facial recognition to identify
+                receptionists at hospital desks. It stores data, alerts if receptionists are
+                absent, prevents position swapping, and tracks attendance automatically,
+                providing comprehensive administrative monitoring.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Add Font Awesome CSS (include this in your head tag) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
     
     <!-- Education Section -->
     <section id="education" class="educationSection">
