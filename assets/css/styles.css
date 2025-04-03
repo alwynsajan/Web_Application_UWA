@@ -621,7 +621,7 @@ nav a:hover::before {
   overflow: hidden;
 }
 
-/* Project Title - Left Aligned */
+/* Project Title */
 .projects {
   color: var(--color1);
   opacity: 0;
@@ -647,10 +647,10 @@ nav a:hover::before {
   font-family: var(--main-font);
   padding: 30px;
   background: rgba(30, 42, 94, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   color: var(--color1);
   margin-bottom: 40px;
   position: relative;
@@ -658,12 +658,63 @@ nav a:hover::before {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
+/* Animated Border Gradient */
+.projectItem::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(
+    135deg, 
+    rgba(225, 215, 183, 0.6) 0%,
+    rgba(225, 215, 183, 0.2) 50%,
+    rgba(225, 215, 183, 0.6) 100%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* Inner Glow Effect */
+.projectItem::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: -1;
+}
+
+/* Hover Effects */
+.projectItem:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.projectItem:hover::before,
+.projectItem:hover::after {
+  opacity: 1;
+}
+
+/* Content Animation */
 .projectItem h3 {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 15px;
   position: relative;
-  z-index: 2;
+  transition: transform 0.5s ease;
 }
 
 .projectItem p {
@@ -671,35 +722,15 @@ nav a:hover::before {
   line-height: 1.6;
   margin-bottom: 20px;
   position: relative;
-  z-index: 2;
+  transition: transform 0.5s ease 0.1s;
 }
 
-/* Hover Effect - Gradient Glow */
-.projectItem::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.03) 0%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.03) 100%
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
+.projectItem:hover h3,
+.projectItem:hover p {
+  transform: translateX(8px);
 }
 
-.projectItem:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.projectItem:hover::before {
-  opacity: 1;
-}
-
-/* Project Link with Arrow (No Underline) */
+/* Project Link Styling */
 .projectLink {
   display: inline-flex;
   align-items: center;
@@ -707,16 +738,25 @@ nav a:hover::before {
   color: var(--color3);
   text-decoration: none !important;
   font-weight: 600;
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: 10px 20px;
+  border-radius: 6px;
   background: rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   position: relative;
-  z-index: 2;
+  overflow: hidden;
 }
 
-.projectLink .arrow {
-  transition: transform 0.3s ease;
+.projectLink::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color1);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
 }
 
 .projectLink:hover {
@@ -724,26 +764,35 @@ nav a:hover::before {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.projectLink:hover .arrow {
-  transform: translateX(4px);
+.projectLink:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
-/* Modern Navigation Buttons with Font Awesome Icons */
+.projectLink .arrow {
+  transition: all 0.4s ease;
+}
+
+.projectLink:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Navigation Buttons */
 .navContainer {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 30px;
-  gap: 20px; /* Increased gap between buttons */
+  gap: 20px;
 }
 
 .navButton {
-  width: 70px; /* Increased size */
-  height: 70px; /* Increased size */
-  background: transparent; /* Transparent background */
-  color: var(--color1); /* Use color1 for icons */
-  border: 2px solid var(--color1); /* Border instead of background */
+  width: 70px;
+  height: 70px;
+  background: transparent;
+  color: var(--color1);
+  border: 2px solid var(--color1);
   cursor: pointer;
-  border-radius: 50%; /* Circular buttons */
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -760,35 +809,22 @@ nav a:hover::before {
 }
 
 .navButton:hover {
-  transform: scale(1.2); /* Scale up on hover */
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Glow effect */
-  border-color: var(--color3); /* Change border color on hover */
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  border-color: var(--color3);
 }
 
-/* Font Awesome icon styling */
 .navButton .fa {
-  font-size: 28px; /* Larger icon size */
+  font-size: 28px;
   transition: all 0.3s ease;
 }
 
 .navButton:hover .fa {
-  color: var(--color3); /* Change icon color on hover */
-  transform: scale(1.1); /* Slight icon scale */
+  color: var(--color3);
+  transform: scale(1.1);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .navButton {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .navButton .fa {
-    font-size: 24px;
-  }
-}
-
-/* Header Row Layout */
+/* Header Row */
 .headerRow {
   display: flex;
   justify-content: space-between;
@@ -814,15 +850,16 @@ nav a:hover::before {
   
   .projectItem {
     padding: 25px;
+    border-radius: 12px;
   }
   
   .navButton {
-    width: 48px;
-    height: 48px;
+    width: 60px;
+    height: 60px;
   }
   
   .navButton .fa {
-    font-size: 18px;
+    font-size: 24px;
   }
 }
 
