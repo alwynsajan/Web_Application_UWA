@@ -460,7 +460,6 @@ nav a:hover::before {
   margin-top: 0px;
 }
 
-/* Modern Card Design with Colored Icons */
 .card {
   width: 230px;
   height: 280px;
@@ -470,6 +469,10 @@ nav a:hover::before {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-radius: 12px; 
+  position: relative; 
+  z-index: 1; 
 }
 
 .cardInner {
@@ -505,6 +508,7 @@ nav a:hover::before {
 .cardFront {
   background: rgba(26, 32, 44, 0.1);
   border: 2px solid rgba(74, 85, 104, 0.2);
+  border-left: 3px solid var(--color1);
   color: #1a202c;
 }
 
@@ -890,7 +894,7 @@ nav a:hover::before {
 }
 
 .certificateItem {
-  font-family: var(--main-font);
+  font-family: var(--mainFont);
   background: rgba(30, 42, 94, 0.15);
   backdrop-filter: blur(12px);
   font-size: 23px;
@@ -926,6 +930,7 @@ nav a:hover::before {
   z-index: 2;
 }
 
+/* Updated Block Styles */
 .block {
   height: 250px;
   width: 560px;
@@ -936,26 +941,42 @@ nav a:hover::before {
   cursor: pointer;
   position: relative;
   transition: all 0.4s ease;
+  border-left: 0 solid var(--color1); /* Initialize with 0 width */
 }
 
-/* Gradient Edge Effect */
+/* Gradient Edge Effect - Updated */
 .block::before {
   content: '';
   position: absolute;
   left: 0;
   top: 0;
-  height: 100%;
-  width: 4px;
+  height: 0; /* Start with 0 height */
+  width: 4px; /* Border width */
   background: linear-gradient(
     180deg,
-    transparent,
+    var(--color1),
     var(--color1) 50%,
-    transparent
+    var(--color1)
   );
-  opacity: 0;
-  transition: opacity 0.3s ease, width 0.3s ease;
+  opacity: 1;
+  transition: 
+    height 0.3s ease-out,
+    opacity 0.3s ease;
 }
 
+/* Hover Effects */
+.block:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.block:hover::before {
+  height: 100%; /* Full height on hover */
+  opacity: 1;
+}
+
+/* Keep the existing gradient background effect */
 .block::after {
   content: '';
   position: absolute;
@@ -971,16 +992,6 @@ nav a:hover::before {
   );
   opacity: 0;
   transition: opacity 0.4s ease;
-}
-
-.block:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
-
-.block:hover::before {
-  opacity: 1;
-  width: 6px;
 }
 
 .block:hover::after {
@@ -1009,42 +1020,44 @@ nav a:hover::before {
 
 /* Icon Styling */
 .certificateContent > .fa {
-  font-size: 3.5rem;
-  /* color: var(--color1); */
-  margin-bottom: 15px;
+  font-size: 4.5rem;
+  margin-bottom: 20px;
   position: relative;
   z-index: 2;
   transition: all 0.3s ease;
   opacity: 0.8;
 }
 
-/* Specific icon positioning and effects */
-.fa-python {
-  color: #3776AB !important; 
+/* Specific icon colors */
+.certificateContent > .faPython {
+  color: #3776AB;
+  font-size: 3rem; 
 }
 
-.fa-laptop-code {
-  color: var(--color4)!important;
+.certificateContent > .faLaptopCode {
+  color: var(--color4);
+  font-size: 3rem;
 }
 
-.fa-brain {
-  color: #FF6B6B !important; 
+.certificateContent > .faBrain {
+  color: #FF6B6B; 
+  font-size: 3rem;
 }
 
-.fa-certificate {
-  color: #4CAF50 !important; 
+.certificateContent > .faCertificate {
+  color: #4CAF50; 
+  font-size: 3rem;
 }
 
-/* Hover effects */
 .block:hover .certificateContent > .fa {
   opacity: 1;
   transform: translateY(-5px);
 }
 
 /* Date styling */
-.date {
+.certificateContent .date {
   font-style: normal;
-  color: var(--color3) !important;
+  color: var(--color3);
   margin-top: 15px;
   font-size: 18px;
   display: block;
@@ -1066,8 +1079,11 @@ nav a:hover::before {
   .certificateItem h3 {
     font-size: 22px;
   }
-}
 
+  .certificateContent > .fa {
+    font-size: 3.5rem;
+  }
+}
   .referencesSection{
     background-color: var(--color3);
     margin: 20px;
