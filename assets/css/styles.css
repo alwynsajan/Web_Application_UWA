@@ -1,8 +1,9 @@
 :root {
-  --color1: #E1D7B7;
-  --color2: #1E2A5E;
-  --color3:#55679C;
-  --color4:#98D2C0;
+  --color1: #F8F0E5;
+  --color2: #102C57;
+  --color3:#EADBC8;
+  --color4:#DAC0A3;
+  --color5:#493628;
   --color1-rgb: 123, 45, 67;
   --main-font: 'poppins', sans-serif;
 }
@@ -41,7 +42,7 @@ nav {
 }
 
 nav a {
-  color: var(--color3); 
+  color: var(--color5); 
   font-weight: 500;
   text-decoration: none; 
   font-size: 16px;
@@ -106,11 +107,11 @@ nav a.selected::before {
   display: block;
   width: 25px;
   height: 2px;
-  background: var(--color2); 
+  background: var(--color5); 
   margin: 4px 0;
   transition: all 0.3s ease;
   transform-origin: center;
-  color: var(--color3);
+  color: var(--color5);
 }
 
 .hamburger_menu:hover {
@@ -118,7 +119,7 @@ nav a.selected::before {
 }
 
 .hamburger_menu:hover span {
-  background: var(--color2);
+  background: var(--color5);
 }
 
 /* Active state for hamburger */
@@ -157,7 +158,6 @@ nav a.selected::before {
     overflow-y: auto;
   }
 
-  /* Changed this to always show full height when active */
   nav.active {
     display: flex;
     height: calc(100vh - 80px);
@@ -304,12 +304,12 @@ nav a.selected::before {
   border-radius: 50%;
   position: relative;
   overflow: hidden;
-  border: 3px solid var(--color2);
+  border: 3px solid var(--color5);
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .socialList li a .icon {
-  color: var(--color3);
+  color: var(--color5);
   transition: transform 0.5s, color 0.5s;
   position: relative;
   z-index: 3;
@@ -447,8 +447,8 @@ nav a.selected::before {
 }
 
 .profileParagraph{
-  font-size: 23px;
-  color: var(--color3);
+  font-size: 20px;
+  color: var(--color2);
   text-align: justify;
 }
 
@@ -464,12 +464,12 @@ nav a.selected::before {
 }
 
 .skillSection {
-  background-color: var(--color2);
+  background-color: var(--color3);
   padding: 50px 0;
 }
 
 .skills {
-  color: var(--color1);
+  color: var(--color5);
   text-align: left;
   margin-top: 0px;
 }
@@ -513,17 +513,16 @@ nav a.selected::before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
+  border-radius: 15px;
   padding: 25px;
   box-sizing: border-box;
   font-family: var(--mainFont);
 }
 
 .cardFront {
-  background: rgba(26, 32, 44, 0.1);
-  border: 2px solid rgba(74, 85, 104, 0.2);
-  border-left: 3px solid var(--color1);
-  color: #1a202c;
+  background: var(--color1);
+  border: 2px solid rgba(218, 192, 163, 0.3); /* Using --color4 at 30% opacity */
+  color: var(--color5);
 }
 
 .cardFront .icon {
@@ -542,7 +541,7 @@ nav a.selected::before {
   font-weight: 600;
   margin: 0;
   text-align: center;
-  color: var(--color1);
+  color: var(--color5);
 }
 
 .cardBack {
@@ -601,7 +600,6 @@ nav a.selected::before {
   will-change: opacity, transform;
   pointer-events: none;
   font-size: 55px;
-  font-weight: 600;
 }
 
 .experience.slideLeftToRight {
@@ -614,7 +612,7 @@ nav a.selected::before {
 .experienceItem {
   font-family: var(--main-font);
   font-size: 23px;
-  color: var(--color3);
+  color: var(--color2);
   margin-bottom: 50px;
   padding-left: 40px;
   position: relative;
@@ -638,7 +636,7 @@ nav a.selected::before {
 }
 
 .experienceItem:hover::before {
-  color: var(--color3);
+  color: var(--color2);
   transform: scale(1.2);
 }
 
@@ -646,19 +644,18 @@ nav a.selected::before {
 .experienceItem h3 {
   font-size: 25px;
   font-weight: bold;
-  color: var(--color2);
-  margin-bottom: 5px;
+  color: var(--color5);
   transition: color 0.3s ease;
 }
 
 
 /* Date Styling with Proper Icon Spacing */
 .experienceItem p {
-  font-style: italic;
   margin-bottom: 20px;
-  color: var(--color3);
+  color: var(--color5);
   position: relative;
-  padding-left: 30px; /* Increased from 25px */
+  font-size: 20px;
+  padding-left: 30px; 
 }
 
 .experienceItem p::before {
@@ -757,7 +754,6 @@ nav a.selected::before {
   pointer-events: none;
   margin-bottom: 40px;
   font-size: 55px;
-  font-weight: 600;
   text-align: left;
   width: 100%;
 }
@@ -974,7 +970,7 @@ nav a.selected::before {
 }
 
 .education {
-  color: var(--color2);
+  color: var(--color5);
 }
 
 .educationItem {
@@ -984,7 +980,7 @@ nav a.selected::before {
   padding: 25px;
   text-align: left;
   transition: transform 0.3s ease-in-out;
-  color: var(--color3);
+  color: var(--color5);
   width: 100%;
   margin-bottom: 70px;
 }
@@ -1007,7 +1003,7 @@ nav a.selected::before {
   top: 10px;                
   width: 10px;               
   height: 10px;              
-  background-color: var(--color2);  
+  background-color: var(--color5);  
   border-radius: 50%;        
 }
 
@@ -1018,7 +1014,7 @@ nav a.selected::before {
   top: 20px;                  
   width: 2px;                 
   height: 100%;               
-  background-color: var(--color2);     
+  background-color: var(--color5);     
 }
 
 .educationItem ul {
@@ -1057,21 +1053,21 @@ nav a.selected::before {
   font-weight: 600;
 }
 .educationItem li:hover > .eduMainHeading {
-  color: var(--color2); 
+  color: var(--color4); 
 }
 
 .certificateSection {
-  background-color: var(--color2);
+  background-color: var(--color5);
   padding: 40px 0;
 }
 
 .certificates {
-  color: var(--color1);
+  color: var(--color3);
 }
 
 .certificateItem {
   font-family: var(--mainFont);
-  background: rgba(30, 42, 94, 0.15);
+  border: 1px solid rgba(218, 192, 163, 0.35);
   backdrop-filter: blur(12px);
   font-size: 23px;
   padding: 25px;
@@ -1117,7 +1113,7 @@ nav a.selected::before {
   cursor: pointer;
   position: relative;
   transition: all 0.4s ease;
-  border-left: 0 solid var(--color1); /* Initialize with 0 width */
+  border-left: 0 solid var(--color3); 
 }
 
 /* Gradient Edge Effect - Updated */
@@ -1210,7 +1206,7 @@ nav a.selected::before {
 }
 
 .certificateContent > .faLaptopCode {
-  color: var(--color4);
+  color: #FBBC05;
   font-size: 3rem;
 }
 
@@ -1259,23 +1255,61 @@ nav a.selected::before {
     font-size: 3.5rem;
   }
 }
-  .referencesSection{
-    background-color: var(--color3);
-    }
-    
-    .references{
-      color: var(--color4);
-    }
-  
-    .referenceItem h3 {
-      font-size: 25px; 
-      font-weight: bold; 
-      color: var(--color4);
-      margin-top: 0px; 
-    }
-    .referenceItem li{
-      margin-bottom: 40px;
-    }
+.referencesSection {
+  background-color: var(--color3);
+  padding: 60px 0;
+}
+
+.references {
+  color: var(--color2);
+  margin-bottom: 40px;
+}
+
+.referenceGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.referenceRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.referenceCategory {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.referenceCategory h3 {
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--color2);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--color4);
+}
+
+.referenceEntry p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: var(--color5);
+}
+
+.referenceUrl {
+  color: var(--color2);
+  word-break: break-all;
+}
+
+@media (max-width: 768px) {
+  .referenceRow {
+    grid-template-columns: 1fr;
+  }
+}
 
 .footer h4{
   font-size: 30px;
@@ -1285,8 +1319,8 @@ nav a.selected::before {
 
 .footer{
   font-family: var(--main-font);
-  background-color: white;
-  color: var(--color3);
+  background-color: var(--color1);
+  color: var(--color5);
   border-bottom: 50px;
 }
 
@@ -1296,8 +1330,8 @@ nav a.selected::before {
 
 .footer a{
   font-size: 20px;
-  background-color: var(--color2);
-  color: var(--color1);
+  background-color: var(--color3);
+  color: var(--color5);
   border-radius: 20px;
   height: 100;
   padding: 10px;
