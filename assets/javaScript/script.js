@@ -227,6 +227,3 @@ $(document).ready(function () {
   updateCounter();
 });
 
-
-  
-  
