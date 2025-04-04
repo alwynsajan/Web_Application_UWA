@@ -456,8 +456,15 @@ nav a.selected::before {
 
   /* Adjusted social list container */
   .socialList {
-    left: 40px !important;
-    bottom: 0%;
+    left: 30% !important;
+    top: auto !important;
+    bottom: 20px !important;
+    transform: translateX(-50%) !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
   }
 
   /* Adjusted social icons */
