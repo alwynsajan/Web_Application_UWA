@@ -16,7 +16,7 @@ header {
   height: 100vh; 
 }
 
-/* Modern Navigation Bar */
+/* Navigation bar container styling */
 nav {
   background-color: rgba(255, 255, 255, 0.5); 
   backdrop-filter: blur(10px);
@@ -36,11 +36,13 @@ nav {
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Styling when navbar is scrolled */
 .nav-scrolled {
   height: 70px;
   background-color: rgba(255, 255, 255, 0.95);
 }
 
+/* Navigation links styling */
 nav a {
   color: var(--color5); 
   font-weight: 500;
@@ -53,11 +55,13 @@ nav a {
   border-radius: 4px;
 }
 
+/* Styling for the selected navigation link */
 nav a.selected {
   color: var(--color2);
   font-weight: 600;
 }
 
+/* Underline effect for navigation links */
 nav a::before {
   content: '';
   position: absolute;
@@ -71,21 +75,26 @@ nav a::before {
   transition: transform 0.3s ease;
 }
 
+/* Hover effect for navigation links */
 nav a:hover {
   color: var(--color2);
   text-decoration: none;
 }
 
+/* Underline transition on hover */
 nav a:hover::before {
   transform: scaleX(1);
   transform-origin: left;
 }
 
+/* Keep underline visible for selected link */
 nav a.selected::before {
   transform: scaleX(1);
 }
 
+
 /* Modern Hamburger Menu */
+/* Hamburger menu container styling */
 .hamburger_menu {
   display: none;
   cursor: pointer;
@@ -103,6 +112,7 @@ nav a.selected::before {
   transition: all 0.3s ease;
 }
 
+/* Styling for hamburger menu lines */
 .hamburger_menu span {
   display: block;
   width: 25px;
@@ -114,33 +124,39 @@ nav a.selected::before {
   color: var(--color5);
 }
 
+/* Hover background color for hamburger menu */
 .hamburger_menu:hover {
   background: rgba(255, 255, 255, 0.95);
 }
 
+/* Hover color for hamburger menu lines */
 .hamburger_menu:hover span {
   background: var(--color5);
 }
 
-/* Active state for hamburger */
+/* Active state background for hamburger menu */
 .hamburger_menu.active {
   background: rgba(255, 255, 255, 0.95);
 }
 
+/* Active transformation for top line */
 .hamburger_menu.active span:nth-child(1) {
   transform: translateY(6px) rotate(45deg);
 }
 
+/* Hide middle line when active */
 .hamburger_menu.active span:nth-child(2) {
   opacity: 0;
 }
 
+/* Active transformation for bottom line */
 .hamburger_menu.active span:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* Mobile Navigation - Dropdown Style */
+/* Responsive styles for navigation (mobile) */
 @media (max-width: 1280px) {
+  /* Mobile nav container styling */
   nav {
     position: fixed;
     display: none;
@@ -158,6 +174,7 @@ nav a.selected::before {
     overflow-y: auto;
   }
 
+  /* Active mobile nav display */
   nav.active {
     display: flex;
     height: calc(100vh - 80px);
@@ -165,6 +182,7 @@ nav a.selected::before {
     padding: 20px 0;
   }
 
+  /* Mobile navigation link styling */
   nav a {
     color: var(--color2); 
     margin: 10px 0;
@@ -178,12 +196,14 @@ nav a.selected::before {
     text-decoration: none;
   }
 
+  /* Animate nav links when nav is active */
   nav.active a {
     opacity: 1;
     transform: translateY(0);
     transition-delay: calc(0.1s * var(--i));
   }
 
+  /* Mobile nav link underline position */
   nav a::before {
     bottom: 0;
     height: 100%;
@@ -192,16 +212,18 @@ nav a.selected::before {
     transform: scaleY(0);
   }
 
+  /* Show underline on hover or selected link */
   nav a:hover::before,
   nav a.selected::before {
     transform: scaleY(1);
   }
 
+  /* Show hamburger menu in mobile view */
   .hamburger_menu {
     display: flex;
   }
 
-  /* Bottom spacing for last menu item */
+  /* Bottom padding space in mobile nav */
   nav::after {
     content: '';
     display: block;
@@ -209,6 +231,7 @@ nav a.selected::before {
   }
 }
 
+/* Full-screen background image styling */
 .alwyn_image {
   position: absolute; 
   transform: translateY(-50%); 
@@ -218,62 +241,64 @@ nav a.selected::before {
   transition: font-size 0.4s ease-in-out;
 }
 
-/* Header Text */
+/* Header text styles (Hello & Name) */
 .headerhello,
 .headerName {
   font-family: var(--main-font);
   font-weight: bold;
   font-size: 75px;
   position: absolute;
-  /* left: 20px;  */
   white-space: nowrap;
   margin-left: 5%;
 }
 
+/* "Hello" header text */
 .headerhello {
   top: 40%;
   color: white;
 }
 
+/* Name in header */
 .headerName {
   top: 53%;
   color: white;
 }
 
-/* Cursor */
+/* Blinking typing cursor effect */
 .cursor {
-    position: relative;
-    display: inline-block; 
-    border-right: 3px solid white;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
+  position: relative;
+  display: inline-block; 
+  border-right: 3px solid white;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-/* Animation */
+/* Typewriter animation wrapper */
 .typewriter-animation {
-    width: 24ch;  
-    animation: typewriter 5s steps(22) 2s 1 normal both, 
-               blinkingCursor 500ms steps(50) 5s 1 normal forwards;
+  width: 24ch;  
+  animation: typewriter 5s steps(22) 2s 1 normal both, 
+             blinkingCursor 500ms steps(50) 5s 1 normal forwards;
 }
 
+/* Keyframes for typewriter effect */
 @keyframes typewriter {
-    from { width: 0ch; }
-    to { width: 24ch; }
+  from { width: 0ch; }
+  to { width: 24ch; }
 }
 
+/* Keyframes for blinking cursor */
 @keyframes blinkingCursor {
-    0%, 100% { border-right-color: white; }
-    50% { border-right-color: transparent; }
+  0%, 100% { border-right-color: white; }
+  50% { border-right-color: transparent; }
 }
 
-
+/* Sub-header styling */
 .headerSub {
   font-family: 'Anonymous Pro', monospace;
   font-weight: 900;
   font-size: 25px; 
   position: absolute;
-  /* left: 20px;  */
   top: 70%; 
   transform: translateY(-50%);
   color: white;
@@ -282,6 +307,7 @@ nav a.selected::before {
   opacity: 0.7;
 }
 
+/* Social icon list container */
 .socialList {
   display: flex;
   position: absolute;
@@ -293,6 +319,7 @@ nav a.selected::before {
   list-style: none;
 }
 
+/* Individual social icon links */
 .socialList li a {
   width: 55px;
   height: 55px;
@@ -308,6 +335,7 @@ nav a.selected::before {
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
+/* Icon style inside social link */
 .socialList li a .icon {
   color: var(--color5);
   transition: transform 0.5s, color 0.5s;
@@ -315,16 +343,19 @@ nav a.selected::before {
   z-index: 3;
 }
 
+/* Hover effect for social icon link */
 .socialList li a:hover {
   transform: scale(1.2);
   border-color: white;
 }
 
+/* Hover effect for icon animation */
 .socialList li a:hover .icon {
   color: white;
   transform: rotateY(360deg);
 }
 
+/* Overlay background for hover animation */
 .socialList li a::before {
   content: "";
   position: absolute;
@@ -336,25 +367,27 @@ nav a.selected::before {
   z-index: 2;
 }
 
-/* GitHub Hover (Green) */
+/* GitHub icon hover color */
 .socialList li:nth-child(1) a::before {
   background: #28a745;
 }
 
-/* LinkedIn Hover (Blue) */
+/* LinkedIn icon hover color */
 .socialList li:nth-child(2) a::before {
   background: #0077b5;
 }
 
-/* Contact Hover (Dark Blue) */
+/* Contact icon hover color */
 .socialList li:nth-child(3) a::before {
   background: #1a237e;
 }
 
+/* Trigger overlay transition on hover */
 .socialList li a:hover::before {
   top: 0;
 }
 
+/* "Contact Me" button styling */
 .contact {
   font-size: 20px;
   font-weight: bold;
@@ -371,14 +404,14 @@ nav a.selected::before {
   transition: transform 0.3s ease;
 }
 
+/* Hover effect for contact button */
 .contact:hover {
   transform: scale(1.1);
   background-color: white;
   color: var(--color1);
 }
 
-
-/* Animations */
+/* Fade in animation (reusable) */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -388,8 +421,9 @@ nav a.selected::before {
   }
 }
 
-/* Responsive Media Query */
+/* Responsive layout adjustments for small screens */
 @media (max-width: 710px) {
+  /* Adjusted "Hello" header */
   .headerhello {
     font-size: 50px !important; 
     position: absolute; 
@@ -398,7 +432,8 @@ nav a.selected::before {
     transform: translateY(-50%); 
     color: white;
   }
-  
+
+  /* Adjusted name header */
   .headerName {
     font-size: 70px !important; 
     position: absolute; 
@@ -408,6 +443,8 @@ nav a.selected::before {
     text-align: center;
     color: whitesmoke;
   }
+
+  /* Adjusted sub-header */
   .headerSub {
     font-size: 20px !important; 
     position: absolute; 
@@ -417,44 +454,50 @@ nav a.selected::before {
     color: white;
   }
 
+  /* Adjusted social list container */
   .socialList {
     left: 40px !important;
     bottom: 0%;
   }
 
+  /* Adjusted social icons */
   .socialList li a {
     width: 50px;
     height: 50px;
     font-size: 20px;
   }
-
 }
 
-.profile,.skills,.experience,.projects,.certificates,.education,.references{
+/* Section Headings (e.g., Profile, Skills, Experience, etc.) */
+.profile, .skills, .experience, .projects, .certificates, .education, .references {
   font-family: var(--main-font);
   font-weight: bold;
   font-size: 55px;
 }
 
-.profileSection{
+/* Profile section background */
+.profileSection {
   background-color: var(--color1);
 }
 
+/* Profile heading */
 .profile {
   color: var(--color2);
   padding-top: 40px;
   margin-bottom: 40px;
 }
 
-.profileParagraph{
+/* Paragraph text in profile section */
+.profileParagraph {
   font-size: 20px;
   color: var(--color2);
   text-align: justify;
 }
 
+/* Reusable box styling */
 .Box {
   font-family: var(--main-font);
-  background:transparent; 
+  background: transparent; 
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: justify;
@@ -463,17 +506,20 @@ nav a.selected::before {
   text-align: left; 
 }
 
+/* Skills section background */
 .skillSection {
   background-color: var(--color3);
   padding: 50px 0;
 }
 
+/* Skills section heading */
 .skills {
   color: var(--color5);
   text-align: left;
   margin-top: 0px;
 }
 
+/* Skill card container */
 .card {
   width: 230px;
   height: 280px;
@@ -489,6 +535,7 @@ nav a.selected::before {
   z-index: 1; 
 }
 
+/* Inner card for flip animation */
 .cardInner {
   position: relative;
   width: 100%;
@@ -499,10 +546,12 @@ nav a.selected::before {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
+/* Flip effect on hover */
 .card:hover .cardInner {
   transform: rotateY(180deg);
 }
 
+/* Front and back face shared styling */
 .cardFront,
 .cardBack {
   position: absolute;
@@ -519,23 +568,27 @@ nav a.selected::before {
   font-family: var(--mainFont);
 }
 
+/* Front face of the card */
 .cardFront {
   background: var(--color1);
   border: 2px solid rgba(218, 192, 163, 0.3); /* Using --color4 at 30% opacity */
   color: var(--color5);
 }
 
+/* Icon styling inside card front */
 .cardFront .icon {
   font-size: 60px;
   margin-bottom: 20px;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
+/* Specific icon colors for each skill */
 .programmingCard .icon { color: #4285F4; }
 .webCard .icon { color: #EA4335; }
 .databasesCard .icon { color: #FBBC05; }
 .devOpsCard .icon { color: #34A853; }
 
+/* Heading inside card front */
 .cardFront h2 {
   font-size: 25px;
   font-weight: 600;
@@ -544,6 +597,7 @@ nav a.selected::before {
   color: var(--color5);
 }
 
+/* Back face of the card */
 .cardBack {
   background: var(--color1);
   transform: rotateY(180deg);
@@ -553,6 +607,7 @@ nav a.selected::before {
   font-weight: 600;
 }
 
+/* Skill list on card back */
 .cardBack ul {
   list-style: none;
   padding: 0;
@@ -560,6 +615,7 @@ nav a.selected::before {
   width: 100%;
 }
 
+/* List items on card back */
 .cardBack li {
   font-size: 22px;
   margin: 12px 0;
@@ -568,6 +624,7 @@ nav a.selected::before {
   color: var(--color2);
 }
 
+/* Bullet point before each list item */
 .cardBack li::before {
   content: "•";
   color: var(--color2);
@@ -579,19 +636,20 @@ nav a.selected::before {
   line-height: 1;
 }
 
+/* Animation class to fade in cards */
 .card.fadeIn {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Experience Section - With Hover Effects */
+/* Experience section container */
 .experienceSection {
   background-color: var(--color1);
   padding: 40px;
   position: relative;
 }
 
-/* Experience Title */
+/* Experience Title - hidden by default with animation */
 .experience {
   color: var(--color2);
   opacity: 0;
@@ -602,13 +660,14 @@ nav a.selected::before {
   font-size: 55px;
 }
 
+/* Experience Title - visible with slide-in effect */
 .experience.slideLeftToRight {
   opacity: 1;
   transform: translateX(0);
   pointer-events: auto;
 }
 
-/* Experience Items */
+/* Experience Item container */
 .experienceItem {
   font-family: var(--main-font);
   font-size: 23px;
@@ -619,12 +678,12 @@ nav a.selected::before {
   transition: all 0.3s ease;
 }
 
-/* Simple Hover Effect */
+/* Hover effect on experience item */
 .experienceItem:hover {
   transform: translateX(5px);
 }
 
-/* Icon Styling */
+/* Icon before each experience item */
 .experienceItem::before {
   content: '▹';
   position: absolute;
@@ -635,12 +694,13 @@ nav a.selected::before {
   transition: all 0.3s ease;
 }
 
+/* Hover effect for item icon */
 .experienceItem:hover::before {
   color: var(--color2);
   transform: scale(1.2);
 }
 
-/* Content Styling */
+/* Experience item job title */
 .experienceItem h3 {
   font-size: 25px;
   font-weight: bold;
@@ -648,33 +708,36 @@ nav a.selected::before {
   transition: color 0.3s ease;
 }
 
-
-/* Date Styling with Proper Icon Spacing */
+/* Date text with icon */
 .experienceItem p {
   margin-bottom: 20px;
   color: var(--color5);
   position: relative;
   font-size: 20px;
-  padding-left: 30px; 
+  padding-left: 30px;
 }
 
+/* Icon before date */
 .experienceItem p::before {
   content: '⌛';
   position: absolute;
   left: 0;
-  margin-right: 8px; /* Added space between icon and text */
+  margin-right: 8px;
   transition: transform 0.3s ease;
 }
 
+/* Rotate icon on hover */
 .experienceItem:hover p::before {
   transform: rotate(15deg);
 }
 
+/* Unstyled list for responsibilities/tasks */
 .experienceItem ul {
   padding-left: 0;
   list-style-type: none;
 }
 
+/* Each responsibility list item */
 .experienceItem li {
   margin-bottom: 15px;
   line-height: 1.6;
@@ -683,11 +746,12 @@ nav a.selected::before {
   transition: transform 0.3s ease;
 }
 
+/* Hover effect on list item */
 .experienceItem:hover li {
   transform: translateX(3px);
 }
 
-/* Custom Bullet */
+/* Bullet icon before each list item */
 .experienceItem li::before {
   content: '•';
   position: absolute;
@@ -698,39 +762,46 @@ nav a.selected::before {
   transition: all 0.3s ease;
 }
 
+/* Hover animation for bullet */
 .experienceItem:hover li::before {
   transform: scale(1.3);
 }
 
+/* Strongly emphasized text */
 .experienceItem strong {
   color: var(--color2);
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
-
-/* Responsive Design */
+/* Responsive design for tablets and smaller devices */
 @media (max-width: 768px) {
+  /* Smaller padding for experience section */
   .experienceSection {
     padding: 30px 20px;
   }
-  
+
+  /* Smaller title font */
   .experience {
     font-size: 42px;
   }
-  
+
+  /* Adjusted padding on item */
   .experienceItem {
     padding-left: 35px;
   }
-  
+
+  /* Smaller icon size */
   .experienceItem::before {
     font-size: 22px;
   }
-  
+
+  /* Adjust date icon spacing */
   .experienceItem p {
-    padding-left: 28px; /* Adjusted for mobile */
+    padding-left: 28px;
   }
-  
+
+  /* Adjust list padding */
   .experienceItem li {
     padding-left: 25px;
   }
@@ -963,6 +1034,7 @@ nav a.selected::before {
   }
 }
 
+/* Education Section */
 .educationSection{
   background-color: var(--color1);
   height:580px;
@@ -973,6 +1045,7 @@ nav a.selected::before {
   color: var(--color5);
 }
 
+/* Education Item */
 .educationItem {
   font-family: var(--main-font);
   background-color: var(--color1);
@@ -1040,6 +1113,7 @@ nav a.selected::before {
   margin-bottom: 5px;
 }
 
+/* Education Details */
 .eduDetails {
   opacity: 0; /* Hide details initially */
   transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
@@ -1052,19 +1126,25 @@ nav a.selected::before {
 .eduMainHeading{
   font-weight: 600;
 }
+
 .educationItem li:hover > .eduMainHeading {
   color: var(--color4); 
 }
 
+/* Certificate Section */
 .certificateSection {
   background-color: var(--color5);
   padding: 40px 0;
 }
 
+
+/* Certificates Section */
 .certificates {
   color: var(--color3);
+  margin-bottom: 40px;
 }
 
+/* Certificate Item */
 .certificateItem {
   font-family: var(--mainFont);
   border: 1px solid rgba(218, 192, 163, 0.35);
@@ -1086,12 +1166,14 @@ nav a.selected::before {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Slide Animation for Certificate Item */
 .certificateItem.slideLeftToRight {
   opacity: 1;
   transform: translateX(0);
   pointer-events: auto;
 }
 
+/* Certificate Content */
 .certificateContent {
   width: 100%;
   height: 100%;
@@ -1102,7 +1184,7 @@ nav a.selected::before {
   z-index: 2;
 }
 
-/* Updated Block Styles */
+/* Block Styles */
 .block {
   height: 250px;
   width: 560px;
@@ -1113,17 +1195,17 @@ nav a.selected::before {
   cursor: pointer;
   position: relative;
   transition: all 0.4s ease;
-  border-left: 0 solid var(--color3); 
+  border-left: 0 solid var(--color3);
 }
 
-/* Gradient Edge Effect - Updated */
+/* Gradient Edge Effect */
 .block::before {
   content: '';
   position: absolute;
   left: 0;
   top: 0;
-  height: 0; /* Start with 0 height */
-  width: 4px; /* Border width */
+  height: 0;
+  width: 4px;
   background: linear-gradient(
     180deg,
     var(--color1),
@@ -1136,18 +1218,18 @@ nav a.selected::before {
     opacity 0.3s ease;
 }
 
-/* Hover Effects */
+/* Hover Effects for Block */
 .block:hover {
   transform: translateY(-5px) scale(1.03);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
 }
 
 .block:hover::before {
-  height: 100%; /* Full height on hover */
+  height: 100%;
   opacity: 1;
 }
 
-/* Keep the existing gradient background effect */
+/* Additional Gradient Background Effect */
 .block::after {
   content: '';
   position: absolute;
@@ -1169,7 +1251,7 @@ nav a.selected::before {
   opacity: 0.15;
 }
 
-/* Certification Text Styling */
+/* Certification Title */
 .certificateItem h3 {
   font-size: 25px;
   font-weight: 600;
@@ -1177,10 +1259,12 @@ nav a.selected::before {
   position: relative;
 }
 
+/* Secondary Certification Title */
 .certificateItem h3:nth-child(2) {
   color: rgba(225, 215, 183, 0.9);
 }
 
+/* Icon Styling */
 .certificateContent i {
   font-style: normal;
   color: rgba(225, 215, 183, 0.7);
@@ -1189,7 +1273,7 @@ nav a.selected::before {
   letter-spacing: 0.5px;
 }
 
-/* Icon Styling */
+/* Icons for Certifications */
 .certificateContent > .fa {
   font-size: 4.5rem;
   margin-bottom: 20px;
@@ -1199,33 +1283,37 @@ nav a.selected::before {
   opacity: 0.8;
 }
 
-/* Specific icon colors */
+/* Python Icon */
 .certificateContent > .faPython {
   color: #3776AB;
-  font-size: 3rem; 
+  font-size: 3rem;
 }
 
+/* Laptop Code Icon */
 .certificateContent > .faLaptopCode {
   color: #FBBC05;
   font-size: 3rem;
 }
 
+/* Brain Icon */
 .certificateContent > .faBrain {
-  color: #FF6B6B; 
+  color: #FF6B6B;
   font-size: 3rem;
 }
 
+/* Certificate Icon */
 .certificateContent > .faCertificate {
-  color: #4CAF50; 
+  color: #4CAF50;
   font-size: 3rem;
 }
 
+/* Hover Effects for Icons */
 .block:hover .certificateContent > .fa {
   opacity: 1;
   transform: translateY(-5px);
 }
 
-/* Date styling */
+/* Date Styling */
 .certificateContent .date {
   font-style: normal;
   color: var(--color3);
@@ -1234,6 +1322,7 @@ nav a.selected::before {
   display: block;
 }
 
+/* Mobile Styles for Certificates */
 @media (max-width: 576px) {
   .certificateItem {
     width: 90%;
@@ -1255,28 +1344,33 @@ nav a.selected::before {
     font-size: 3.5rem;
   }
 }
+/* References Section Styling */
 .referencesSection {
   background-color: var(--color3);
   padding: 60px 0;
 }
 
+/* References Title Styling */
 .references {
   color: var(--color2);
   margin-bottom: 40px;
 }
 
+/* Reference Grid Layout */
 .referenceGrid {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
+/* Reference Row Layout */
 .referenceRow {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
+/* Reference Category Styling */
 .referenceCategory {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
@@ -1284,6 +1378,7 @@ nav a.selected::before {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+/* Reference Category Title */
 .referenceCategory h3 {
   font-size: 25px;
   font-weight: bold;
@@ -1293,6 +1388,7 @@ nav a.selected::before {
   border-bottom: 2px solid var(--color4);
 }
 
+/* Reference Entry Text */
 .referenceEntry p {
   font-size: 16px;
   line-height: 1.6;
@@ -1300,23 +1396,27 @@ nav a.selected::before {
   color: var(--color5);
 }
 
+/* Reference URL Styling */
 .referenceUrl {
   color: var(--color2);
   word-break: break-all;
 }
 
+/* Mobile Layout Adjustments */
 @media (max-width: 768px) {
   .referenceRow {
     grid-template-columns: 1fr;
   }
 }
 
+/* Footer Title Styling */
 .footer h4{
   font-size: 30px;
   margin-top: 25px;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
+/* Footer Styling */
 .footer{
   font-family: var(--main-font);
   background-color: var(--color1);
@@ -1324,28 +1424,31 @@ nav a.selected::before {
   border-bottom: 50px;
 }
 
+/* Footer Paragraph Styling */
 .footer p{
   font-size: 20px;
 }
 
+/* Footer Link Styling */
 .footer a{
   font-size: 20px;
   background-color: var(--color3);
   color: var(--color5);
   border-radius: 20px;
-  height: 100;
+  height: 50px; 
   padding: 10px;
   margin-top: 50px;
   margin-bottom: 20px;
 }
 
+/* Profile Button Styling */
 .profileButton {
   margin-bottom: 50px; 
   display: flex;
   justify-content: center; 
-
 }
 
+/* Footer Link Hover Effect */
 .footer a:hover{
   text-decoration: none;
   transform: scale(1.1);
