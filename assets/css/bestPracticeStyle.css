@@ -331,14 +331,14 @@ body {
 }
 
 .practiceContent h3 {
-  color: var(--color2);
+  color: var(--color5);
   margin: 0 0 16px 0;
   font-size: 2.5rem;
   font-weight: 600;
   line-height: 1.4;
   position: relative;
   padding-left: 16px;
-  border-bottom: 2px dashed var(--color2);
+  border-bottom: 2px dashed var(--color5);
   padding-bottom: 8px; 
   display: inline-block;
 }
