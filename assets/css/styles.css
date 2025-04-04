@@ -13,16 +13,11 @@ html {
 
 header {
   height: 100vh; 
-  margin-bottom:20px;
-
 }
 
 /* Navigation Bar */
 nav {
-  margin-right: 20px;
   background-color: rgba(9, 0, 0, 0.5);
-  border-radius: 6px;
-  margin-left: 20px;
   font-family: var(--main-font);
   font-size: 18px; 
   height: 70px; 
@@ -41,7 +36,6 @@ nav {
   background-color: rgba(9, 0, 0, 0.7);
   backdrop-filter: blur(10px);
   height: 60px; 
-  border-radius: 0px;
 }
 
 nav a.selected {
@@ -194,7 +188,7 @@ nav a:hover::before {
 .alwyn_image {
   position: absolute; 
   transform: translateY(-50%); 
-  width: 100vw;
+  width: 99vw;
   height: 100vh;
   object-fit: cover;
   transition: font-size 0.4s ease-in-out;
@@ -420,8 +414,6 @@ nav a:hover::before {
 
 .profileSection{
   background-color: var(--color1);
-  margin: 20px;
-  border-radius: 10px;
 }
 
 .profile {
@@ -450,8 +442,6 @@ nav a:hover::before {
 .skillSection {
   background-color: var(--color2);
   padding: 50px 0;
-  margin: 20px;
-  border-radius: 10px;
 }
 
 .skills {
@@ -573,8 +563,6 @@ nav a:hover::before {
 
 .experienceSection{
   background-color: var(--color1);
-  margin: 20px;
-  border-radius: 10px;
 }
 
 .experience {
@@ -614,8 +602,6 @@ nav a:hover::before {
 /* Project Section */
 .projectSection {
   background-color: var(--color2);
-  margin: 20px;
-  border-radius: 16px;
   padding: 40px;
   position: relative;
   overflow: hidden;
@@ -642,79 +628,61 @@ nav a:hover::before {
   pointer-events: auto;
 }
 
-/* Modern Project Card */
+/* Modern Project Card with New Hover Effect */
 .projectItem {
   font-family: var(--main-font);
   padding: 30px;
   background: rgba(30, 42, 94, 0.15);
-  backdrop-filter: blur(12px);
-  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   color: var(--color1);
   margin-bottom: 40px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Animated Border Gradient */
+/* New Hover Effect */
+.projectItem:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-color: rgba(225, 215, 183, 0.4);
+}
+
+/* Animated Corner Highlight */
 .projectItem::before {
   content: '';
   position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  padding: 2px;
-  background: linear-gradient(
-    135deg, 
-    rgba(225, 215, 183, 0.6) 0%,
-    rgba(225, 215, 183, 0.2) 50%,
-    rgba(225, 215, 183, 0.6) 100%
-  );
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+  top: -1px;
+  right: -1px;
+  width: 30px;
+  height: 30px;
+  border-top: 2px solid var(--color3);
+  border-right: 2px solid var(--color3);
+  border-radius: 0 12px 0 0;
   opacity: 0;
-  transition: opacity 0.6s ease;
+  transition: all 0.4s ease;
 }
 
-/* Inner Glow Effect */
-.projectItem::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.05) 0%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  z-index: -1;
-}
-
-/* Hover Effects */
-.projectItem:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-}
-
-.projectItem:hover::before,
-.projectItem:hover::after {
+.projectItem:hover::before {
   opacity: 1;
+  width: 60px;
+  height: 60px;
 }
 
-/* Content Animation */
+/* Content Styling */
 .projectItem h3 {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 15px;
   position: relative;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
+}
+
+.projectItem:hover h3 {
+  transform: translateX(5px);
 }
 
 .projectItem p {
@@ -722,15 +690,14 @@ nav a:hover::before {
   line-height: 1.6;
   margin-bottom: 20px;
   position: relative;
-  transition: transform 0.5s ease 0.1s;
+  transition: transform 0.3s ease 0.1s;
 }
 
-.projectItem:hover h3,
 .projectItem:hover p {
-  transform: translateX(8px);
+  transform: translateX(5px);
 }
 
-/* Project Link Styling */
+/* Fixed View Project Button */
 .projectLink {
   display: inline-flex;
   align-items: center;
@@ -741,7 +708,7 @@ nav a:hover::before {
   padding: 10px 20px;
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.1);
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
@@ -749,13 +716,17 @@ nav a:hover::before {
 .projectLink::before {
   content: '';
   position: absolute;
+  top: 0;
   left: 0;
-  bottom: 0;
   width: 100%;
-  height: 2px;
-  background: var(--color1);
-  transform: scaleX(0);
-  transform-origin: right;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
   transition: transform 0.4s ease;
 }
 
@@ -765,16 +736,15 @@ nav a:hover::before {
 }
 
 .projectLink:hover::before {
-  transform: scaleX(1);
-  transform-origin: left;
+  transform: translateX(100%);
 }
 
 .projectLink .arrow {
-  transition: all 0.4s ease;
+  transition: transform 0.3s ease;
 }
 
 .projectLink:hover .arrow {
-  transform: translateX(5px);
+  transform: translateX(4px);
 }
 
 /* Navigation Buttons */
@@ -786,8 +756,8 @@ nav a:hover::before {
 }
 
 .navButton {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   background: transparent;
   color: var(--color1);
   border: 2px solid var(--color1);
@@ -796,9 +766,7 @@ nav a:hover::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
+  transition: all 0.3s ease;
   opacity: 0;
   transform: translateX(20px);
 }
@@ -809,19 +777,16 @@ nav a:hover::before {
 }
 
 .navButton:hover {
-  transform: scale(1.2);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-  border-color: var(--color3);
+  border: none;
 }
 
 .navButton .fa {
-  font-size: 28px;
-  transition: all 0.3s ease;
+  font-size: 24px;
+  transition: transform 0.3s ease;
 }
 
 .navButton:hover .fa {
-  color: var(--color3);
-  transform: scale(1.1);
+  transform: scale(1.4);
 }
 
 /* Header Row */
@@ -835,7 +800,7 @@ nav a:hover::before {
 
 /* Project Wrapper */
 #projectWrapper {
-  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 0.6s ease;
 }
 
 /* Responsive Design */
@@ -850,16 +815,15 @@ nav a:hover::before {
   
   .projectItem {
     padding: 25px;
-    border-radius: 12px;
   }
   
   .navButton {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
   }
   
   .navButton .fa {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
@@ -867,8 +831,6 @@ nav a:hover::before {
   background-color: var(--color1);
   height:580px;
   overflow: hidden;
-  margin: 20px;
-  border-radius: 10px;
 }
 
 .education {
@@ -960,8 +922,6 @@ nav a:hover::before {
 
 .certificateSection {
   background-color: var(--color2);
-  margin: 20px;
-  border-radius: 10px;
   padding: 40px 0;
 }
 
@@ -1044,7 +1004,6 @@ nav a:hover::before {
 .block:hover {
   transform: translateY(-5px) scale(1.03);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
-  z-index: 10;
 }
 
 .block:hover::before {
@@ -1162,8 +1121,6 @@ nav a:hover::before {
 }
   .referencesSection{
     background-color: var(--color3);
-    margin: 20px;
-    border-radius: 10px;
     }
     
     .references{
