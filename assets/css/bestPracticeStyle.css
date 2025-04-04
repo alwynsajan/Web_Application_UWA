@@ -1,9 +1,10 @@
 :root {
-  --color1: #F8F0E5;    /* Light cream - Primary background */
-  --color2: #102C57;    /* Dark blue - Primary text/accents */
-  --color3: #EADBC8;    /* Light tan - Secondary background */
-  --color4: #DAC0A3;    /* Medium tan - Borders/accents */
-  --color5: #493628;    /* Dark brown - Secondary text */
+  /* CSS Variables for theme colors and font */
+  --color1: #F8F0E5;    
+  --color2: #102C57;    
+  --color3: #EADBC8;    
+  --color4: #DAC0A3;    
+  --color5: #493628;    
   --color1-light: rgba(248, 240, 229, 0.1);
   --color1-medium: rgba(248, 240, 229, 0.3);
   --color1-dark: #e0d8c5;
@@ -14,7 +15,7 @@
   --main-font: 'Poppins', sans-serif;
 }
 
-/* Header fade-down animation only */
+/* Fade-down animation for header */
 @keyframes fadeDown {
   from {
     opacity: 0;
@@ -26,6 +27,7 @@
   }
 }
 
+/* Global body styles */
 body {
   font-family: var(--main-font);
   color: var(--color5);
@@ -33,7 +35,7 @@ body {
   background-color: var(--color1);
 }
 
-/* Navigation Bar */
+/* Default navigation bar styles */
 .navbarDefault {
   background-color: var(--color2);
   border: none;
@@ -41,6 +43,7 @@ body {
   min-height: 60px;
 }
 
+/* Fixed top navigation bar */
 .navbarFixedTop {
   position: fixed;
   top: 0;
@@ -49,6 +52,7 @@ body {
   z-index: 1030;
 }
 
+/* Brand/logo styling in navbar */
 .navbarBrand {
   color: var(--color1);
   font-size: 22px;
@@ -59,16 +63,19 @@ body {
   float: left;
 }
 
+/* Brand hover effect */
 .navbarBrand:hover {
   color: var(--color4);
   text-decoration: none;
 }
 
+/* Navigation links container */
 .navbarNav {
   margin: 0;
   float: right;
 }
 
+/* Styles for navigation links */
 .navbarNav > li > a {
   color: var(--color1);
   padding: 20px 15px;
@@ -76,12 +83,13 @@ body {
   display: block;
 }
 
+/* Hover effect for navigation links */
 .navbarNav > li > a:hover {
   color: var(--color4);
   background-color: transparent;
 }
 
-/* Header Section with fade-down animation */
+/* Best practices header with fade-down animation */
 .bestPracticesHeader {
   position: relative;
   background: linear-gradient(135deg, var(--color2), var(--color2-dark));
@@ -93,6 +101,7 @@ body {
   animation: fadeDown 0.8s ease-out both;
 }
 
+/* Decorative background pattern before header */
 .bestPracticesHeader::before {
   content: '';
   position: absolute;
@@ -115,6 +124,7 @@ body {
   transform: rotate(15deg);
 }
 
+/* Decorative triangle after header */
 .bestPracticesHeader::after {
   content: '';
   position: absolute;
@@ -128,10 +138,12 @@ body {
   opacity: 0.2;
 }
 
+/* Border at the bottom of header */
 .bestPracticesHeader {
   border-bottom: 6px solid var(--color4);
 }
 
+/* Wrapper for centered header content */
 .headerContent {
   position: relative;
   z-index: 2;
@@ -140,6 +152,7 @@ body {
   padding: 0 20px;
 }
 
+/* Downward scroll indicator icon */
 .scroll-indicator {
   position: absolute;
   bottom: 20px;
@@ -149,6 +162,7 @@ body {
   color: var(--color4);
 }
 
+/* Main heading inside header */
 .bestPracticesHeader h1 {
   font-size: 4.5rem;
   font-weight: 700;
@@ -156,6 +170,7 @@ body {
   line-height: 1.2;
 }
 
+/* Paragraph text inside header */
 .bestPracticesHeader p {
   font-size: 1.5rem;
   opacity: 0.9;
@@ -163,7 +178,7 @@ body {
   color: var(--color4);
 }
 
-/* Progress Container */
+/* Container for progress bar and stats */
 .progressContainer {
   background-color: var(--color1);
   padding: 15px 0;
@@ -174,12 +189,14 @@ body {
   border-bottom: 1px solid var(--color3);
 }
 
+/* Flex layout for progress stats and bar */
 .progressInfo {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/* Styling for the completed stats */
 .progressStats {
   font-weight: 500;
   color: var(--color2);
@@ -187,16 +204,32 @@ body {
   font-size: 1.5rem;
 }
 
+/* Message shown when reward is available */
+.rewardMessage {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style for the total completion count */
+.completionCount {
+  font-size: 1.1em;
+  color: #555;
+}
+
+/* Red number that turns green when reward is unlocked */
 #completedCount {
-  color: var(--color5);
+  color: red;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
+/* Green color when reward is unlocked */
 #completedCount.reward-unlocked {
   color: var(--colorSuccess); 
 }
 
+/* Container for progress bar */
 .progressBarContainer {
   flex-grow: 1;
   height: 12px;
@@ -206,6 +239,7 @@ body {
   overflow: hidden;
 }
 
+/* Fills the progress bar as progress increases */
 .progressBar {
   height: 100%;
   background-color: var(--colorSuccess);
@@ -213,6 +247,7 @@ body {
   transition: width 0.5s ease;
 }
 
+/* Button to view reward */
 .viewRewardBtn {
   background-color: var(--color2);
   color: var(--color1);
@@ -225,12 +260,14 @@ body {
   font-size: 1.5rem;
 }
 
+/* Hover effect for reward button */
 .viewRewardBtn:hover {
   background-color: var(--color2-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
+/* Disabled state for reward button */
 .viewRewardBtn:disabled {
   background-color: var(--color2-medium);
   cursor: not-allowed;
@@ -238,30 +275,34 @@ body {
   box-shadow: none;
 }
 
-/* Practice Sections */
+/* Generic section styling for practice modules */
 .practiceSection {
   padding: 80px 0;
   margin-bottom: 30px;
 }
 
+/* HTML practice section style */
 .htmlSection {
   background-color: var(--color3);
   border-top: 3px solid var(--color4);
   border-bottom: 3px solid var(--color4);
 }
 
+/* CSS practice section style */
 .cssSection {
   background-color: var(--color3);
   border-top: 3px solid var(--color2);
   border-bottom: 3px solid var(--color2);
 }
 
+/* JavaScript practice section style */
 .jsSection {
   background-color: var(--color3);
   border-top: 3px solid var(--color2-dark);
   border-bottom: 3px solid var(--color2-dark);
 }
 
+/* Header container for each section */
 .sectionHeader {
   margin-bottom: 50px;
   display: flex;
@@ -269,36 +310,42 @@ body {
   font-weight: bold;
 }
 
+/* Icon next to the section title */
 .sectionIcon {
   font-size: 3rem;
   margin-right: 25px;
 }
 
+/* Icon color specific to HTML section */
 .htmlSection .sectionIcon {
   color: var(--color4);
 }
 
+/* Icon color specific to CSS section */
 .cssSection .sectionIcon {
   color: var(--color2);
 }
 
+/* Icon color specific to JS section */
 .jsSection .sectionIcon {
   color: var(--color2-dark);
 }
 
+/* Title text styling in each section */
 .sectionTitle {
   font-weight: 600;
   color: var(--color2);
   margin: 0;
   font-size: 4.5rem;
 }
-
+/* Grid layout for practice items */
 .practiceGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   gap: 40px;
 }
 
+/* Individual practice item container */
 .practiceItem {
   background: var(--color1);
   border-radius: 12px;
@@ -312,12 +359,14 @@ body {
   border: 1px solid var(--color2-light);
 }
 
+/* Hover effect for practice item */
 .practiceItem:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px var(--color2-medium);
   border-color: var(--color2-medium);
 }
 
+/* Left color bar before hover */
 .practiceItem::before {
   content: '';
   position: absolute;
@@ -329,14 +378,17 @@ body {
   transition: width 0.3s ease;
 }
 
+/* Expanded left bar on hover */
 .practiceItem:hover::before {
   width: 6px;
 }
 
+/* Content container inside each practice item */
 .practiceContent {
   margin-bottom: 24px;
 }
 
+/* Title style inside practice item */
 .practiceContent h3 {
   color: var(--color5);
   margin: 0 0 16px 0;
@@ -350,6 +402,7 @@ body {
   display: inline-block;
 }
 
+/* Decorative bar before the h3 heading */
 .practiceContent h3::before {
   content: '';
   position: absolute;
@@ -361,6 +414,7 @@ body {
   border-radius: 2px;
 }
 
+/* Description text inside each practice item */
 .practiceContent p {
   color: var(--color5);
   line-height: 1.7;
@@ -370,12 +424,14 @@ body {
   text-align: justify;
 }
 
+/* Wrapper for custom checkbox */
 .practiceCheckbox {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
+/* Hidden actual checkbox input */
 .practiceCheckbox input {
   position: absolute;
   opacity: 0;
@@ -384,6 +440,7 @@ body {
   width: 0;
 }
 
+/* Custom styled checkbox UI */
 .checkmark {
   position: relative;
   height: 24px;
@@ -397,15 +454,18 @@ body {
   justify-content: center;
 }
 
+/* Hover effect on checkbox */
 .practiceCheckbox:hover input ~ .checkmark {
   background-color: var(--color2-light);
 }
 
+/* Checked checkbox style */
 .practiceCheckbox input:checked ~ .checkmark {
   background-color: var(--color1);
   border-color: var(--colorSuccess);
 }
 
+/* Checkmark style (tick) inside custom checkbox */
 .checkmark:after {
   content: '';
   position: absolute;
@@ -418,11 +478,12 @@ body {
   margin-top: -2px;
 }
 
+/* Show tick mark when checkbox is checked */
 .practiceCheckbox input:checked ~ .checkmark:after {
   display: block;
 }
 
-/* Reward Section */
+/* Reward Section Container */
 .rewardSection {
   background-color: var(--color2);
   color: var(--color1);
@@ -430,12 +491,14 @@ body {
   text-align: center;
 }
 
+/* Reward Section Heading */
 .rewardSection h2 {
   margin-bottom: 40px;
   font-weight: 600;
   font-size: 2.5rem;
 }
 
+/* Reward Card/Box */
 .rewardContainer {
   background-color: var(--color1);
   border: 5px solid var(--color4);
@@ -454,6 +517,7 @@ body {
   overflow: hidden;
 }
 
+/* Reward Image */
 .rewardContainer img {
   max-width: 80%;
   max-height: 70%;
@@ -465,6 +529,7 @@ body {
   flex-shrink: 0;
 }
 
+/* Gradient overlay background inside reward container */
 .rewardContainer::before {
   content: '';
   position: absolute;
@@ -476,11 +541,13 @@ body {
   z-index: 1;
 }
 
+/* Ensure reward container's direct children appear above overlay */
 .rewardContainer > * {
   position: relative;
   z-index: 2;
 }
 
+/* "Congratulations" text inside reward card */
 .rewardContainer .congratsMessage {
   font-size: 2rem;
   font-weight: 700;
@@ -490,50 +557,54 @@ body {
   letter-spacing: 1px;
 }
 
-/* Responsive Design */
+/* ---------- Responsive Design ---------- */
+
+/* Mobile / Tablet Layout: Stack practice items vertically */
 @media (max-width: 992px) {
   .practiceGrid {
     grid-template-columns: 1fr;
   }
 }
 
+/* Tablet tweaks */
 @media (max-width: 768px) {
   .bestPracticesHeader {
     padding: 80px 0 60px;
   }
-  
+
   .bestPracticesHeader h1 {
     font-size: 2.5rem;
   }
-  
+
   .sectionTitle {
     font-size: 4rem;
   }
-  
+
   .practiceContent h3 {
     font-size: 2.3rem;
   }
-  
+
   .viewRewardBtn {
     font-size: 1.2rem;
     padding: 8px 15px;
   }
-  
+
   .rewardContainer {
     min-height: 300px;
     padding: 20px;
   }
 }
 
+/* Small screens */
 @media (max-width: 480px) {
   .navbarBrand {
     font-size: 18px;
   }
-  
+
   .bestPracticesHeader h1 {
     font-size: 2rem;
   }
-  
+
   .sectionTitle {
     font-size: 3rem;
   }
