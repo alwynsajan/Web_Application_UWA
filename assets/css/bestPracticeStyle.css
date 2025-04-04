@@ -14,6 +14,18 @@
   --main-font: 'Poppins', sans-serif;
 }
 
+/* Header fade-down animation only */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 body {
   font-family: var(--main-font);
   color: var(--color5);
@@ -69,7 +81,7 @@ body {
   background-color: transparent;
 }
 
-/* Header Section */
+/* Header Section with fade-down animation */
 .bestPracticesHeader {
   position: relative;
   background: linear-gradient(135deg, var(--color2), var(--color2-dark));
@@ -78,6 +90,7 @@ body {
   text-align: center;
   margin-bottom: 30px;
   overflow: hidden;
+  animation: fadeDown 0.8s ease-out both;
 }
 
 .bestPracticesHeader::before {
@@ -134,12 +147,6 @@ body {
   transform: translateX(-50%);
   font-size: 1.8rem;
   color: var(--color4);
-}
-
-.headerContent {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
 .bestPracticesHeader h1 {
@@ -515,10 +522,6 @@ body {
   .rewardContainer {
     min-height: 300px;
     padding: 20px;
-  }
-
-  .referenceGrid {
-    grid-template-columns: 1fr;
   }
 }
 
