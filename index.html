@@ -1,375 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Set character encoding to UTF-8 to support a wide range of characters -->
-<meta charset="UTF-8">
+  <head>
+    <!-- Meta charset for proper text encoding -->
+    <meta charset="UTF-8">
 
-<!-- Ensure proper scaling on all devices for responsive design -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport settings for responsive design on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Set the page title shown in the browser tab -->
-<title>Best Practices</title>
+    <!-- Font Awesome for icons (e.g., social media icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-<!-- Import Poppins font from Google Fonts for consistent, elegant typography -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Poppins for typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Include Bootstrap 3 CSS for responsive layout and prebuilt components -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Bootstrap for responsive grid system and predefined CSS styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-<!-- Link to custom stylesheet for page-specific styles -->
-<link rel="stylesheet" href="assets/css/bestPracticeStyle.css">
+    <!-- Title of the webpage displayed in the browser tab -->
+    <title>Alwyn Sajan</title>
 
-<!-- Defer loading of custom JavaScript until after HTML is parsed for better performance -->
-<script src="assets/javaScript/bestPracticeJS.js" defer></script>
+    <!-- Custom styles for the website (local styles) -->
+    <link rel="stylesheet" href="assets/css/styles.css">
 
-<!-- Load Font Awesome for scalable vector icons and social logos -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom animations for CSS transitions and effects -->
+    <link rel="stylesheet" href="assets/css/animation.css">
 
+    <!-- Custom JavaScript file for additional functionality (deferred loading to optimize page load) -->
+    <script src="assets/javaScript/script.js" defer></script>
+
+    <!-- jQuery library for DOM manipulation and AJAX support -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbarDefault navbarFixedTop">
-        <div class="container">
-            <!-- Site Logo / Brand -->
-            <div class="navbarHeader">
-                <a class="navbarBrand" href="index.html">Best Coding Practices</a>
-            </div>
 
-            <!-- Navigation Links -->
-            <div class="navbarCollapse">
-                <ul class="nav navbarNav navbarRight">
-                    <li><a href="about.html" target="_blank">About Me</a></li>
-                </ul>
-            </div>
-        </div>
+  <section>
+    <!-- Navigation menu -->
+    <nav id="navID" class="fadeIn nav menu">
+      <!-- Links to different sections of the portfolio -->
+      <a href="#profile">Profile</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>  
+      <a href="#certification">Certification</a>
     </nav>
-
-    <!-- Header Section -->
-    <header class="bestPracticesHeader">
-        <div class="container">
-            <div class="headerContent">
-                <!-- Page Title -->
-                <h1>Web Development Best Practices</h1>
-
-                <!-- Quote for inspiration -->
-                <p>"Code is like humor. When you have to explain it, it’s bad." — Cory House</p>
-            </div>
-        </div>
-
-        <!-- Downward scroll indicator icon -->
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </header>
-
-    <!-- Progress Bar (fixed on scroll) -->
-    <div id="progressContainer" class="progressContainer">
-        <div class="container">
-            <div class="progressInfo">
-                
-                <!-- Text Information and Count -->
-                <div class="progressStats">
-                    <div class="rewardMessage">Complete at least 15 best practices to unlock your reward!</div>
-                    <div class="completionCount">Completed: <span id="completedCount">0</span>/18</div>
-                </div>
-                
-                <!-- Visual Progress Bar -->
-                <div class="progressBarContainer">
-                    <div id="progressBar" class="progressBar"></div>
-                </div>
-                
-                <!-- Disabled Reward Button initially -->
-                <button id="viewRewardBtn" class="viewRewardBtn" disabled>View Reward</button>
-            </div>
-        </div>
+  
+    <!-- Modern Hamburger Menu for smaller screen sizes -->
+    <div class="hamburger_menu fadeIn" id="hamburger-menu">
+      <!-- Three span elements for the hamburger icon -->
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
-    <!-- Main Content -->
-    <div class="mainContent">
-
-        <!-- HTML Best Practice Section -->
-        <section class="practiceSection htmlSection">
-            <div class="container">
-                
-                <!-- Section Header -->
-                <div class="sectionHeader">
-                    <h2 class="sectionTitle">HTML Best Practices</h2>
-                </div>
-
-                <!-- Grid of Best Practices -->
-                <div class="practiceGrid">
-
-                    <!-- Practice 1 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Use Proper Semantic HTML</h3>
-                            <p>Semantic HTML uses meaningful tags to define content, helping browsers 
-                                and assistive technologies understand a webpage's structure.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="H1">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
-                    <!-- Practice 2 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Logical Nesting of Elements</h3>
-                            <p>Logical nesting organizes elements to show their relationships and hierarchy, 
-                                ensuring a clear and structured document flow.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="H2">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
-                    <!-- Practice 3 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Indentation and Formatting</h3>
-                            <p>Indentation and formatting don't affect browser interpretation but improve code readability 
-                                and ease of modification for developers.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="H3">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
-                    <!-- Practice 4 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Clear and Descriptive Naming</h3>
-                            <p>Use clear, descriptive names for IDs and classes to quickly convey the content or purpose of 
-                                elements for better understanding.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="H4">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
-                    <!-- Practice 5 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Consistent Document Flow</h3>
-                            <p>Consistent document flow organizes content logically and orderly. 
-                                Structure HTML to follow a clear progression from top to bottom.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="H5">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
-                    <!-- Practice 6 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Comments and Documentation</h3>
-                            <p>Comments and documentation clarify code purpose and structure, aiding future maintenance 
-                                and collaboration by making it easier to understand.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="H6">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
-                </div>
-            </div>
-        </section>
+  </section>
+  
+  <header id="headerId" class="fadeIn">
+    <!-- Profile image -->
+    <img src="assets/images/alwyn.jpg" alt="Alwyn Sajan" class="alwyn_image fadeIn">
+  </header>
+  
+  <section>
+    <div>
+      <!-- Heading for introduction -->
+      <h1 class="headerhello slideLeftToRight">Hello I'm</h1>
+      
+      <!-- Name heading -->
+      <h1 class="headerName slideLeftToRight">Alwyn Sajan</h1>
+  
+      <!-- Subheading with typewriter animation -->
+      <h2 id="gitId" class="headerSub cursor typewriter-animation">
+        Code. Create. Innovate.
+      </h2>
+  
+      <!-- Social media links section -->
+      <ul class="socialList fadeIn">
+        <li>
+          <!-- GitHub link -->
+          <a href="https://github.com/alwynsajan" class="gitButton" target="_blank">
+            <i class="fab fa-github icon"></i>
+          </a>
+        </li>
+        <li>
+          <!-- LinkedIn link -->
+          <a href="https://www.linkedin.com/in/alwyn-sajan-a8009a19b/" class="linkedInButton" target="_blank">
+            <i class="fab fa-linkedin-in icon"></i>
+          </a>
+        </li>
+        <li>
+          <!-- Contact link, leads to the footer -->
+          <a href="#footer" class="contactButton">
+            <i class="fa fa-address-card icon"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  
     
-
-
-        <!-- CSS Best Practice Section -->
-        <section class="practiceSection cssSection">
-            <div class="container">
-                <div class="sectionHeader">
-                    <h2 class="sectionTitle">CSS Best Practices</h2>
-                </div>
-                <!-- Grid for Practice Items -->
-                <div class="practiceGrid">
-                    <!--  Practice Items 1 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Organize Code with Comments</h3>
-                            <p>Organize CSS into logical groups with comments before each group to improve readability and
-                                    make editing easier in large files.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="C1">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    
-                    <!--  Practice Items 2 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Maintain Consistent Formatting</h3>
-                            <p>Maintain consistent line breaks in CSS for better readability and easier navigation, 
-                                especially in long and complex stylesheets.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="C2">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    
-                    <!--  Practice Items 3 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Minimize the use of <code>!important</code></h3>
-                            <p>Limit the use of <code>!important</code> in CSS to prevent conflicts with styles and maintain better control 
-                                over styling rules.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="C3">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    
-                    <!--  Practice Items 4 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Efficient Styling with Selectors</h3>
-                            <p>Use class and ID selectors in CSS to improve performance, avoid conflicts, and make the code easier to maintain.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="C4">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
-                    <!--  Practice Items 5 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Use Utility Classes for Reusability</h3>
-                            <p>Create utility classes in CSS to apply common styles across elements, promoting reuse and reducing redundant code.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="C5">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
-                    <!--  Practice Items 6 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Organizing and Structuring</h3>
-                            <p>Organize CSS into separate files based on functionality for better maintainability and easier management of styles.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="C6">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- JavaScript Best Practice Section -->
-        <section class="practiceSection jsSection">
-            <div class="container">
-                <div class="sectionHeader">
-                    <h2 class="sectionTitle">JavaScript Best Practices</h2>
-                </div>
-                <div class="practiceGrid">
-                    <!--  Practice Items 1 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Use <code>let</code> and <code>const</code> Instead of var</h3>
-                            <p><code>let</code> and <code>const</code> have block scope, which helps prevent common bugs related to variable hoisting and scope issues.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="J1">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    <!--  Practice Items 2 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Create Straightforward Functions</h3>
-                            <p>Functions should focus on one task, making them simpler, easier to test, debug, and maintain
-                                    for better code clarity and efficiency.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="J2">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    
-                    <!--  Practice Items 3 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Use Strict Equality (===) and Inequality (!==)</h3>
-                            <p>Strict equality ensures both value and type match, preventing unintended type conversions and making 
-                                comparisons more reliable.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="J3">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
-                    <!--  Practice Items 4 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Use Default Parameters</h3>
-                            <p>Default parameters handle missing arguments, ensuring functions run smoothly without errors by
-                                    assigning predefined values when no input is given.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="J4">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    
-                    <!--  Practice Items 5 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Avoid Usage of Global Variables</h3>
-                            <p>Limit global variables to avoid conflicts and bugs. Declare variables within their necessary scope for 
-                                better maintainability and reliability.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="J5">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    
-                    <!--  Practice Items 6 -->
-                    <div class="practiceItem">
-                        <div class="practiceContent">
-                            <h3>Use Comments Appropriately</h3>
-                            <p>Comments should explain the why behind the code, not the what. They are useful for complex logic or important details.</p>
-                        </div>
-                        <label class="practiceCheckbox">
-                            <input type="checkbox" id="J6">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <section class="profileSection">
+    <div class="container">
+      <!-- Profile Section -->
+      <div id="profile" class="row Box">
+        <!-- Profile Header -->
+        <h2 class="profile">Profile.</h2>
+        
+        <!-- Profile Description Paragraph -->
+        <p class="profileParagraph">
+          Driven by a passion for technology and innovation, with a strong focus on problem-solving, automation, and data-driven
+          solutions. Excels in Python, C++, SQL, and full-stack development, aiming to contribute to impactful projects through 
+          technical expertise and analytical thinking. Seeking opportunities in a dynamic environment that encourages continuous 
+          learning, collaboration, and creative problem-solving.
+        </p>
+      </div>
     </div>
+  </section>
+  
 
-    <!-- Reward Section -->
-    <section id="rewardSection" class="rewardSection">
-        <div class="container">
-            <h2>Your Reward</h2>
-            <div id="rewardContainer" class="rewardContainer">
-                <p>Complete at least 15 best practices to unlock your reward!</p>
+  <!-- Skill Section -->
+  <section id="skills" class="skillSection">
+    <div class="container">
+      <!-- Section Heading -->
+      <div class="row box">
+        <h2 class="skills">Skills.</h2>
+      </div>
+
+      <div class="row">
+        <!-- Programming Skills Card -->
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <div class="card programmingCard">
+            <div class="cardInner">
+              <!-- Front of the Card -->
+              <div class="cardFront">
+                <i class="icon fas fa-code"></i>
+                <h2>Programming</h2>
+              </div>
+              <!-- Back of the Card -->
+              <div class="cardBack">
+                <ul>
+                  <li>Python</li>
+                  <li>Java</li>
+                  <li>C++</li>
+                  <li>JavaScript</li>
+                </ul>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+
+        <!-- Web Technologies Skills Card -->
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <div class="card webCard">
+            <div class="cardInner">
+              <!-- Front of the Card -->
+              <div class="cardFront">
+                <i class="icon fas fa-globe"></i>
+                <h2>Web Tech</h2>
+              </div>
+              <!-- Back of the Card -->
+              <div class="cardBack">
+                <ul>
+                  <li>Django</li>
+                  <li>Flask</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Databases Skills Card -->
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <div class="card databasesCard">
+            <div class="cardInner">
+              <!-- Front of the Card -->
+              <div class="cardFront">
+                <i class="icon fas fa-database"></i>
+                <h2>Databases</h2>
+              </div>
+              <!-- Back of the Card -->
+              <div class="cardBack">
+                <ul>
+                  <li>SQL</li>
+                  <li>MongoDB</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DevOps Skills Card -->
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <div class="card devOpsCard">
+            <div class="cardInner">
+              <!-- Front of the Card -->
+              <div class="cardFront">
+                <i class="icon fas fa-server"></i>
+                <h2>DevOps</h2>
+              </div>
+              <!-- Back of the Card -->
+              <div class="cardBack">
+                <ul>
+                  <li>Docker</li>
+                  <li>Git</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <!-- jQuery and Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- Experience Section -->
+  <section id="experience" class="experienceSection">
+    <div class="container">
+      <!-- Section Heading -->
+      <div class="row Box">
+        <h2 class="experience">Experience.</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <!-- Individual Experience Item -->
+          <div class="experienceItem">
+            <h3>Software Engineer.</h3>
+            <h3>AllGoVision Technologies Pvt Ltd, India</h3>
+            <p>07/2022 - 06/2024 (1 year 11 months)</p>
+            <ul>
+              <!-- Key Responsibilities and Achievements -->
+              <li>Designed and developed a <strong>GUI-based Python tool</strong>, optimizing functionality and user experience.</li>
+              <li>Deployed and managed Python-based backend servers, ensuring scalability and performance.</li>
+              <li>Developed resilient <strong>REST APIs</strong>, enhancing frontend-backend communication.</li>
+              <li>Refactored and optimized a legacy <strong>C++ codebase</strong>, integrating new features and performance enhancements.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Section -->
+  <section id="projects" class="projectSection">
+    <div class="container">
+      <!-- Header Row with Project Title and Navigation -->
+      <div class="headerRow">
+        <h2 class="projects">Projects.</h2>
+        <div class="navContainer">
+          <!-- Previous Button (Initially Hidden) -->
+          <button id="prevButton" class="navButton" style="display: none;">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <!-- Next Button -->
+          <button id="nextButton" class="navButton">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div id="projectWrapper">
+        <!-- First Set of Projects -->
+        <div id="projectSet1">
+          <!-- Project 1 -->
+          <div class="row">
+            <div class="col-12">
+              <div class="projectItem">
+                <h3>CUSTOMER MANAGEMENT SYSTEM (CRM) SYSTEM</h3>
+                <h3>Freelance, Australia</h3>
+                <p>Developed a CRM system using Python (Tkinter) and SQL, integrating
+                  product management, sales tracking, invoicing, and daily profit analysis.
+                  Designed an intuitive GUI for seamless user experience and
+                  implemented database-driven analytics to optimize sales performance.
+                </p>
+                <!-- Project Link -->
+                <a href="https://github.com/alwynsajan/CartridgeWorld-CRM" class="projectLink" target="_blank">
+                  View Project <span class="arrow">→</span>
+                </a>
+                <!-- Project Images Link -->
+                <a href="https://github.com/alwynsajan/CartridgeWorld-CRM/tree/salesUpdate/Images" class="projectLink" target="_blank">
+                  View Project Images <span class="arrow">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="row">
+            <div class="col-12">
+              <div class="projectItem">
+                <h3>MULTIPLE CAMERA TRACKING</h3>
+                <h3>AllGoVision Technologies Pvt Ltd, India</h3>
+                <p>Multiple Camera Tracking project involves the development of a system
+                  capable of tracking a vehicle or person across different cameras. This is
+                  achieved through various algorithms, including spatiotemporal scoring
+                  and feature matching.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Set of Projects (Initially Hidden) -->
+        <div id="projectSet2" style="display: none;">
+          <!-- Project 3 -->
+          <div class="row">
+            <div class="col-12">
+              <div class="projectItem">
+                <h3>ANALYTICS</h3>
+                <h3>AllGoVision Technologies Pvt Ltd, India</h3>
+                <p>Analytics is a project focused on processing camera feeds using various
+                  Deep Learning (DL) algorithms according to predefined business logic to
+                  generate desired outputs. This involves extracting meaningful insights and
+                  information from the video streams to enhance security, efficiency, or
+                  decision-making processes.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="row">
+            <div class="col-12">
+              <div class="projectItem">
+                <h3>RECEPTIONIST MONITORING APPLICATION</h3>
+                <h3>AllGoVision Technologies Pvt Ltd, India</h3>
+                <p>The Receptionist Monitoring Application uses facial recognition to identify
+                  receptionists at hospital desks. It stores data, alerts if receptionists are
+                  absent, prevents position swapping, and tracks attendance automatically,
+                  providing comprehensive administrative monitoring.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      
+  <!-- Education Section -->
+  <section id="education" class="educationSection">
+    <div class="container">
+      <!-- Header Row for Education -->
+      <div class="row Box">
+        <h2 class="education">Education.</h2>
+      </div>
+      
+      <!-- Education Details -->
+      <div class="row">
+        <div class="col-12">
+          <div class="educationItem">
+            <ul>
+              <!-- Master's Degree -->
+              <li>
+                <h3 class="eduMainHeading">MASTER OF INFORMATION TECHNOLOGY.</h3>
+                <div class="eduDetails">
+                  <h3>University of Western Australia, Australia</h3>
+                  <i>2024 - Present</i>
+                </div>
+              </li>
+      
+              <!-- Bachelor's Degree -->
+              <li>
+                <h3 class="eduMainHeading">BTECH - ELECTRONICS AND COMMUNICATION.</h3>
+                <div class="eduDetails">
+                  <h3>Thangal Kunju Musaliar College of Engineering, India</h3>
+                  <h3>CGPA - 9.02</h3>
+                  <p><i>2018 - 2022</i></p>
+                </div>
+              </li>
+      
+              <!-- Higher Secondary Education -->
+              <li>
+                <h3 class="eduMainHeading">12th - Science.</h3>
+                <div class="eduDetails">
+                  <h3>Sabarigiri Higher Secondary School, India</h3>
+                  <h3>Percentage - 92.7%</h3>
+                  <p><i>2015 - 2017</i></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      
+  <!-- Certification Section -->
+  <section id="certification" class="certificateSection">
+    <div class="container">
+      <!-- Header Row for Certifications -->
+      <div class="row box">
+        <h2 class="certificates">Certifications.</h2>
+      </div>
+      
+      <!-- First Row of Certifications -->
+      <div class="row">
+        <!-- Python Certification -->
+        <div class="col-md-12 col-lg-6">
+          <div class="certificateItem block">
+            <div class="certificateContent">
+              <i class="fab fa-python faPython"></i>
+              <h3>THE JOY OF COMPUTING USING PYTHON.</h3>
+              <h3>NPTEL - 90%</h3>
+              <i class="date">Jan-April 2021</i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web Development Certification -->
+        <div class="col-md-12 col-lg-6">
+          <div class="certificateItem block">
+            <div class="certificateContent">
+              <i class="fas fa-laptop-code faLaptopCode"></i>
+              <h3>RESPONSIVE WEBSITE BASICS</h3>
+              <h3>Coursera</h3>
+              <i class="date">May 2021</i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Row of Certifications -->
+      <div class="row" style="margin-bottom: 50px;">
+        <!-- Machine Learning Certification -->
+        <div class="col-md-12 col-lg-6">
+          <div class="certificateItem block">
+            <div class="certificateContent">
+              <i class="fas fa-brain faBrain"></i>
+              <h3>MACHINE LEARNING SPECIALIZATION.</h3>
+              <h3>Coursera</h3>
+              <i class="date">August 2022</i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Python Basics Certification -->
+        <div class="col-md-12 col-lg-6">
+          <div class="certificateItem block">
+            <div class="certificateContent">
+              <i class="fas fa-certificate faCertificate"></i>
+              <h3>PYTHON BASICS.</h3>
+              <h3>HackerRank</h3>
+              <i class="date">June 2021</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <!-- Footer Contact Information -->
+      <div class="row">
+        <h4>Get In Touch</h4>
+      </div>
+      <div class="row">
+        <p><i class="fa fa-map-marker-alt me-3"></i> 396 Stirling Highway, ABC, Australia</p>
+      </div>
+      <div class="row">
+        <p><i class="fa fa-phone-alt me-3"></i> +61 428609693</p>
+      </div>
+      <div class="row">
+        <p><i class="fa fa-envelope me-3"></i> alwynsajan@gmail.com</p>
+      </div>
+
+      <!-- Profile Button (Link to Profile Section) -->
+      <div class="row profileButton">
+        <a href="#profile"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

@@ -476,7 +476,7 @@ nav a.selected::before {
 }
 
 /* Section Headings (e.g., Profile, Skills, Experience, etc.) */
-.profile, .skills, .experience, .projects, .certificates, .education, .references {
+.profile, .skills, .experience, .projects, .certificates, .education {
   font-family: var(--main-font);
   font-weight: bold;
   font-size: 55px;
@@ -1350,63 +1350,6 @@ nav a.selected::before {
   .certificateContent > .fa {
     font-size: 3.5rem;
   }
-}
-/* References Section Styling */
-.referencesSection {
-  background-color: var(--color3);
-  padding: 60px 0;
-}
-
-/* References Title Styling */
-.references {
-  color: var(--color2);
-  margin-bottom: 40px;
-}
-
-/* Reference Grid Layout */
-.referenceGrid {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-/* Reference Row Layout */
-.referenceRow {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-
-/* Reference Category Styling */
-.referenceCategory {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-  padding: 25px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-/* Reference Category Title */
-.referenceCategory h3 {
-  font-size: 25px;
-  font-weight: bold;
-  color: var(--color2);
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid var(--color4);
-}
-
-/* Reference Entry Text */
-.referenceEntry p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  color: var(--color5);
-}
-
-/* Reference URL Styling */
-.referenceUrl {
-  color: var(--color2);
-  word-break: break-all;
 }
 
 /* Mobile Layout Adjustments */
