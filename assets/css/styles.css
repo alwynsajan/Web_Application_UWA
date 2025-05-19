@@ -425,9 +425,9 @@ nav a.selected::before {
 @media (max-width: 710px) {
   /* Adjusted "Hello" header */
   .headerhello {
-    font-size: 50px !important; 
+    font-size: 40px !important; 
     position: absolute; 
-    left: 20px; 
+    left: 10px; 
     top: 8%;
     transform: translateY(-50%); 
     color: white;
@@ -435,7 +435,7 @@ nav a.selected::before {
 
   /* Adjusted name header */
   .headerName {
-    font-size: 70px !important; 
+    font-size: 50px !important; 
     position: absolute; 
     left: 10px; 
     top: 18%;
@@ -448,7 +448,7 @@ nav a.selected::before {
   .headerSub {
     font-size: 20px !important; 
     position: absolute; 
-    left: 20px; 
+    left: 10px; 
     top: 35%;
     transform: translateY(-50%); 
     color: white;
